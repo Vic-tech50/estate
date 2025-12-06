@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\PropertiesController::index
  * @see app/Http/Controllers/PropertiesController.php:21
@@ -42,41 +42,6 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\PropertiesController::index
- * @see app/Http/Controllers/PropertiesController.php:21
- * @route '/properties'
- */
-    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: index.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\PropertiesController::index
- * @see app/Http/Controllers/PropertiesController.php:21
- * @route '/properties'
- */
-        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\PropertiesController::index
- * @see app/Http/Controllers/PropertiesController.php:21
- * @route '/properties'
- */
-        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    index.form = indexForm
 /**
 * @see \App\Http\Controllers\PropertiesController::create
  * @see app/Http/Controllers/PropertiesController.php:32
@@ -120,41 +85,6 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\PropertiesController::create
- * @see app/Http/Controllers/PropertiesController.php:32
- * @route '/properties/create'
- */
-    const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: create.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\PropertiesController::create
- * @see app/Http/Controllers/PropertiesController.php:32
- * @route '/properties/create'
- */
-        createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\PropertiesController::create
- * @see app/Http/Controllers/PropertiesController.php:32
- * @route '/properties/create'
- */
-        createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    create.form = createForm
 /**
 * @see \App\Http\Controllers\PropertiesController::store
  * @see app/Http/Controllers/PropertiesController.php:40
@@ -189,27 +119,6 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
-    /**
-* @see \App\Http\Controllers\PropertiesController::store
- * @see app/Http/Controllers/PropertiesController.php:40
- * @route '/properties'
- */
-    const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: store.url(options),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\PropertiesController::store
- * @see app/Http/Controllers/PropertiesController.php:40
- * @route '/properties'
- */
-        storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: store.url(options),
-            method: 'post',
-        })
-    
-    store.form = storeForm
 /**
 * @see \App\Http\Controllers\PropertiesController::show
  * @see app/Http/Controllers/PropertiesController.php:75
@@ -277,41 +186,6 @@ show.head = (args: { property: number | { id: number } } | [property: number | {
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\PropertiesController::show
- * @see app/Http/Controllers/PropertiesController.php:75
- * @route '/properties/{property}'
- */
-    const showForm = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: show.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\PropertiesController::show
- * @see app/Http/Controllers/PropertiesController.php:75
- * @route '/properties/{property}'
- */
-        showForm.get = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\PropertiesController::show
- * @see app/Http/Controllers/PropertiesController.php:75
- * @route '/properties/{property}'
- */
-        showForm.head = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    show.form = showForm
 /**
 * @see \App\Http\Controllers\PropertiesController::edit
  * @see app/Http/Controllers/PropertiesController.php:85
@@ -379,41 +253,6 @@ edit.head = (args: { property: number | { id: number } } | [property: number | {
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\PropertiesController::edit
- * @see app/Http/Controllers/PropertiesController.php:85
- * @route '/properties/{property}/edit'
- */
-    const editForm = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: edit.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\PropertiesController::edit
- * @see app/Http/Controllers/PropertiesController.php:85
- * @route '/properties/{property}/edit'
- */
-        editForm.get = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\PropertiesController::edit
- * @see app/Http/Controllers/PropertiesController.php:85
- * @route '/properties/{property}/edit'
- */
-        editForm.head = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    edit.form = editForm
 /**
 * @see \App\Http\Controllers\PropertiesController::update
  * @see app/Http/Controllers/PropertiesController.php:0
@@ -476,51 +315,6 @@ update.patch = (args: { property: string | number } | [property: string | number
     method: 'patch',
 })
 
-    /**
-* @see \App\Http\Controllers\PropertiesController::update
- * @see app/Http/Controllers/PropertiesController.php:0
- * @route '/properties/{property}'
- */
-    const updateForm = (args: { property: string | number } | [property: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: update.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'PUT',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\PropertiesController::update
- * @see app/Http/Controllers/PropertiesController.php:0
- * @route '/properties/{property}'
- */
-        updateForm.put = (args: { property: string | number } | [property: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PUT',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-            /**
-* @see \App\Http\Controllers\PropertiesController::update
- * @see app/Http/Controllers/PropertiesController.php:0
- * @route '/properties/{property}'
- */
-        updateForm.patch = (args: { property: string | number } | [property: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PATCH',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    update.form = updateForm
 /**
 * @see \App\Http\Controllers\PropertiesController::destroy
  * @see app/Http/Controllers/PropertiesController.php:139
@@ -574,37 +368,6 @@ destroy.delete = (args: { property: string | number } | [property: string | numb
     method: 'delete',
 })
 
-    /**
-* @see \App\Http\Controllers\PropertiesController::destroy
- * @see app/Http/Controllers/PropertiesController.php:139
- * @route '/properties/{property}'
- */
-    const destroyForm = (args: { property: string | number } | [property: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: destroy.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'DELETE',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\PropertiesController::destroy
- * @see app/Http/Controllers/PropertiesController.php:139
- * @route '/properties/{property}'
- */
-        destroyForm.delete = (args: { property: string | number } | [property: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: destroy.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'DELETE',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    destroy.form = destroyForm
 /**
 * @see \App\Http\Controllers\PropertiesController::approve
  * @see app/Http/Controllers/PropertiesController.php:149
@@ -667,41 +430,6 @@ approve.head = (args: { id: string | number } | [id: string | number ] | string 
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\PropertiesController::approve
- * @see app/Http/Controllers/PropertiesController.php:149
- * @route '/properties/approve/{id}'
- */
-    const approveForm = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: approve.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\PropertiesController::approve
- * @see app/Http/Controllers/PropertiesController.php:149
- * @route '/properties/approve/{id}'
- */
-        approveForm.get = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: approve.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\PropertiesController::approve
- * @see app/Http/Controllers/PropertiesController.php:149
- * @route '/properties/approve/{id}'
- */
-        approveForm.head = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: approve.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    approve.form = approveForm
 /**
 * @see \App\Http\Controllers\PropertiesController::cancel
  * @see app/Http/Controllers/PropertiesController.php:159
@@ -763,42 +491,6 @@ cancel.head = (args: { id: string | number } | [id: string | number ] | string |
     url: cancel.url(args, options),
     method: 'head',
 })
-
-    /**
-* @see \App\Http\Controllers\PropertiesController::cancel
- * @see app/Http/Controllers/PropertiesController.php:159
- * @route '/properties/cancel/{id}'
- */
-    const cancelForm = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: cancel.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\PropertiesController::cancel
- * @see app/Http/Controllers/PropertiesController.php:159
- * @route '/properties/cancel/{id}'
- */
-        cancelForm.get = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: cancel.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\PropertiesController::cancel
- * @see app/Http/Controllers/PropertiesController.php:159
- * @route '/properties/cancel/{id}'
- */
-        cancelForm.head = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: cancel.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    cancel.form = cancelForm
 const properties = {
     index: Object.assign(index, index),
 create: Object.assign(create, create),

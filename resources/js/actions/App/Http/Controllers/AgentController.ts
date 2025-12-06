@@ -1,0 +1,530 @@
+import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../../../wayfinder'
+/**
+* @see \App\Http\Controllers\AgentController::update_agent
+ * @see app/Http/Controllers/AgentController.php:73
+ * @route '/updateagent'
+ */
+export const update_agent = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+    url: update_agent.url(options),
+    method: 'post',
+})
+
+update_agent.definition = {
+    methods: ["post"],
+    url: '/updateagent',
+} satisfies RouteDefinition<["post"]>
+
+/**
+* @see \App\Http\Controllers\AgentController::update_agent
+ * @see app/Http/Controllers/AgentController.php:73
+ * @route '/updateagent'
+ */
+update_agent.url = (options?: RouteQueryOptions) => {
+    return update_agent.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\AgentController::update_agent
+ * @see app/Http/Controllers/AgentController.php:73
+ * @route '/updateagent'
+ */
+update_agent.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+    url: update_agent.url(options),
+    method: 'post',
+})
+
+/**
+* @see \App\Http\Controllers\AgentController::block
+ * @see app/Http/Controllers/AgentController.php:120
+ * @route '/agent/block/{id}'
+ */
+export const block = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: block.url(args, options),
+    method: 'get',
+})
+
+block.definition = {
+    methods: ["get","head"],
+    url: '/agent/block/{id}',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\AgentController::block
+ * @see app/Http/Controllers/AgentController.php:120
+ * @route '/agent/block/{id}'
+ */
+block.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { id: args }
+    }
+
+    
+    if (Array.isArray(args)) {
+        args = {
+                    id: args[0],
+                }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+                        id: args.id,
+                }
+
+    return block.definition.url
+            .replace('{id}', parsedArgs.id.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\AgentController::block
+ * @see app/Http/Controllers/AgentController.php:120
+ * @route '/agent/block/{id}'
+ */
+block.get = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: block.url(args, options),
+    method: 'get',
+})
+/**
+* @see \App\Http\Controllers\AgentController::block
+ * @see app/Http/Controllers/AgentController.php:120
+ * @route '/agent/block/{id}'
+ */
+block.head = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: block.url(args, options),
+    method: 'head',
+})
+
+/**
+* @see \App\Http\Controllers\AgentController::unblock
+ * @see app/Http/Controllers/AgentController.php:128
+ * @route '/agent/unblock/{id}'
+ */
+export const unblock = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: unblock.url(args, options),
+    method: 'get',
+})
+
+unblock.definition = {
+    methods: ["get","head"],
+    url: '/agent/unblock/{id}',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\AgentController::unblock
+ * @see app/Http/Controllers/AgentController.php:128
+ * @route '/agent/unblock/{id}'
+ */
+unblock.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { id: args }
+    }
+
+    
+    if (Array.isArray(args)) {
+        args = {
+                    id: args[0],
+                }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+                        id: args.id,
+                }
+
+    return unblock.definition.url
+            .replace('{id}', parsedArgs.id.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\AgentController::unblock
+ * @see app/Http/Controllers/AgentController.php:128
+ * @route '/agent/unblock/{id}'
+ */
+unblock.get = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: unblock.url(args, options),
+    method: 'get',
+})
+/**
+* @see \App\Http\Controllers\AgentController::unblock
+ * @see app/Http/Controllers/AgentController.php:128
+ * @route '/agent/unblock/{id}'
+ */
+unblock.head = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: unblock.url(args, options),
+    method: 'head',
+})
+
+/**
+* @see \App\Http\Controllers\AgentController::index
+ * @see app/Http/Controllers/AgentController.php:18
+ * @route '/agent'
+ */
+export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: index.url(options),
+    method: 'get',
+})
+
+index.definition = {
+    methods: ["get","head"],
+    url: '/agent',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\AgentController::index
+ * @see app/Http/Controllers/AgentController.php:18
+ * @route '/agent'
+ */
+index.url = (options?: RouteQueryOptions) => {
+    return index.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\AgentController::index
+ * @see app/Http/Controllers/AgentController.php:18
+ * @route '/agent'
+ */
+index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: index.url(options),
+    method: 'get',
+})
+/**
+* @see \App\Http\Controllers\AgentController::index
+ * @see app/Http/Controllers/AgentController.php:18
+ * @route '/agent'
+ */
+index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: index.url(options),
+    method: 'head',
+})
+
+/**
+* @see \App\Http\Controllers\AgentController::create
+ * @see app/Http/Controllers/AgentController.php:27
+ * @route '/agent/create'
+ */
+export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: create.url(options),
+    method: 'get',
+})
+
+create.definition = {
+    methods: ["get","head"],
+    url: '/agent/create',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\AgentController::create
+ * @see app/Http/Controllers/AgentController.php:27
+ * @route '/agent/create'
+ */
+create.url = (options?: RouteQueryOptions) => {
+    return create.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\AgentController::create
+ * @see app/Http/Controllers/AgentController.php:27
+ * @route '/agent/create'
+ */
+create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: create.url(options),
+    method: 'get',
+})
+/**
+* @see \App\Http\Controllers\AgentController::create
+ * @see app/Http/Controllers/AgentController.php:27
+ * @route '/agent/create'
+ */
+create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: create.url(options),
+    method: 'head',
+})
+
+/**
+* @see \App\Http\Controllers\AgentController::store
+ * @see app/Http/Controllers/AgentController.php:35
+ * @route '/agent'
+ */
+export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+    url: store.url(options),
+    method: 'post',
+})
+
+store.definition = {
+    methods: ["post"],
+    url: '/agent',
+} satisfies RouteDefinition<["post"]>
+
+/**
+* @see \App\Http\Controllers\AgentController::store
+ * @see app/Http/Controllers/AgentController.php:35
+ * @route '/agent'
+ */
+store.url = (options?: RouteQueryOptions) => {
+    return store.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\AgentController::store
+ * @see app/Http/Controllers/AgentController.php:35
+ * @route '/agent'
+ */
+store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+    url: store.url(options),
+    method: 'post',
+})
+
+/**
+* @see \App\Http\Controllers\AgentController::show
+ * @see app/Http/Controllers/AgentController.php:53
+ * @route '/agent/{agent}'
+ */
+export const show = (args: { agent: number | { id: number } } | [agent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: show.url(args, options),
+    method: 'get',
+})
+
+show.definition = {
+    methods: ["get","head"],
+    url: '/agent/{agent}',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\AgentController::show
+ * @see app/Http/Controllers/AgentController.php:53
+ * @route '/agent/{agent}'
+ */
+show.url = (args: { agent: number | { id: number } } | [agent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { agent: args }
+    }
+
+            if (typeof args === 'object' && !Array.isArray(args) && 'id' in args) {
+            args = { agent: args.id }
+        }
+    
+    if (Array.isArray(args)) {
+        args = {
+                    agent: args[0],
+                }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+                        agent: typeof args.agent === 'object'
+                ? args.agent.id
+                : args.agent,
+                }
+
+    return show.definition.url
+            .replace('{agent}', parsedArgs.agent.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\AgentController::show
+ * @see app/Http/Controllers/AgentController.php:53
+ * @route '/agent/{agent}'
+ */
+show.get = (args: { agent: number | { id: number } } | [agent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: show.url(args, options),
+    method: 'get',
+})
+/**
+* @see \App\Http\Controllers\AgentController::show
+ * @see app/Http/Controllers/AgentController.php:53
+ * @route '/agent/{agent}'
+ */
+show.head = (args: { agent: number | { id: number } } | [agent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: show.url(args, options),
+    method: 'head',
+})
+
+/**
+* @see \App\Http\Controllers\AgentController::edit
+ * @see app/Http/Controllers/AgentController.php:63
+ * @route '/agent/{agent}/edit'
+ */
+export const edit = (args: { agent: number | { id: number } } | [agent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: edit.url(args, options),
+    method: 'get',
+})
+
+edit.definition = {
+    methods: ["get","head"],
+    url: '/agent/{agent}/edit',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\AgentController::edit
+ * @see app/Http/Controllers/AgentController.php:63
+ * @route '/agent/{agent}/edit'
+ */
+edit.url = (args: { agent: number | { id: number } } | [agent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { agent: args }
+    }
+
+            if (typeof args === 'object' && !Array.isArray(args) && 'id' in args) {
+            args = { agent: args.id }
+        }
+    
+    if (Array.isArray(args)) {
+        args = {
+                    agent: args[0],
+                }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+                        agent: typeof args.agent === 'object'
+                ? args.agent.id
+                : args.agent,
+                }
+
+    return edit.definition.url
+            .replace('{agent}', parsedArgs.agent.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\AgentController::edit
+ * @see app/Http/Controllers/AgentController.php:63
+ * @route '/agent/{agent}/edit'
+ */
+edit.get = (args: { agent: number | { id: number } } | [agent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: edit.url(args, options),
+    method: 'get',
+})
+/**
+* @see \App\Http\Controllers\AgentController::edit
+ * @see app/Http/Controllers/AgentController.php:63
+ * @route '/agent/{agent}/edit'
+ */
+edit.head = (args: { agent: number | { id: number } } | [agent: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: edit.url(args, options),
+    method: 'head',
+})
+
+/**
+* @see \App\Http\Controllers\AgentController::update
+ * @see app/Http/Controllers/AgentController.php:0
+ * @route '/agent/{agent}'
+ */
+export const update = (args: { agent: string | number } | [agent: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+    url: update.url(args, options),
+    method: 'put',
+})
+
+update.definition = {
+    methods: ["put","patch"],
+    url: '/agent/{agent}',
+} satisfies RouteDefinition<["put","patch"]>
+
+/**
+* @see \App\Http\Controllers\AgentController::update
+ * @see app/Http/Controllers/AgentController.php:0
+ * @route '/agent/{agent}'
+ */
+update.url = (args: { agent: string | number } | [agent: string | number ] | string | number, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { agent: args }
+    }
+
+    
+    if (Array.isArray(args)) {
+        args = {
+                    agent: args[0],
+                }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+                        agent: args.agent,
+                }
+
+    return update.definition.url
+            .replace('{agent}', parsedArgs.agent.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\AgentController::update
+ * @see app/Http/Controllers/AgentController.php:0
+ * @route '/agent/{agent}'
+ */
+update.put = (args: { agent: string | number } | [agent: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
+    url: update.url(args, options),
+    method: 'put',
+})
+/**
+* @see \App\Http\Controllers\AgentController::update
+ * @see app/Http/Controllers/AgentController.php:0
+ * @route '/agent/{agent}'
+ */
+update.patch = (args: { agent: string | number } | [agent: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'patch'> => ({
+    url: update.url(args, options),
+    method: 'patch',
+})
+
+/**
+* @see \App\Http\Controllers\AgentController::destroy
+ * @see app/Http/Controllers/AgentController.php:110
+ * @route '/agent/{agent}'
+ */
+export const destroy = (args: { agent: string | number } | [agent: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+    url: destroy.url(args, options),
+    method: 'delete',
+})
+
+destroy.definition = {
+    methods: ["delete"],
+    url: '/agent/{agent}',
+} satisfies RouteDefinition<["delete"]>
+
+/**
+* @see \App\Http\Controllers\AgentController::destroy
+ * @see app/Http/Controllers/AgentController.php:110
+ * @route '/agent/{agent}'
+ */
+destroy.url = (args: { agent: string | number } | [agent: string | number ] | string | number, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { agent: args }
+    }
+
+    
+    if (Array.isArray(args)) {
+        args = {
+                    agent: args[0],
+                }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+                        agent: args.agent,
+                }
+
+    return destroy.definition.url
+            .replace('{agent}', parsedArgs.agent.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\AgentController::destroy
+ * @see app/Http/Controllers/AgentController.php:110
+ * @route '/agent/{agent}'
+ */
+destroy.delete = (args: { agent: string | number } | [agent: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+    url: destroy.url(args, options),
+    method: 'delete',
+})
+const AgentController = { update_agent, block, unblock, index, create, store, show, edit, update, destroy }
+
+export default AgentController

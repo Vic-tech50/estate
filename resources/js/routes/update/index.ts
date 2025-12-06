@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition } from './../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\PropertiesController::property
  * @see app/Http/Controllers/PropertiesController.php:93
@@ -33,27 +33,6 @@ property.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
-    /**
-* @see \App\Http\Controllers\PropertiesController::property
- * @see app/Http/Controllers/PropertiesController.php:93
- * @route '/updateproperty'
- */
-    const propertyForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: property.url(options),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\PropertiesController::property
- * @see app/Http/Controllers/PropertiesController.php:93
- * @route '/updateproperty'
- */
-        propertyForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: property.url(options),
-            method: 'post',
-        })
-    
-    property.form = propertyForm
 /**
 * @see \App\Http\Controllers\TestimonialsController::testimonial
  * @see app/Http/Controllers/TestimonialsController.php:110
@@ -88,27 +67,6 @@ testimonial.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
-    /**
-* @see \App\Http\Controllers\TestimonialsController::testimonial
- * @see app/Http/Controllers/TestimonialsController.php:110
- * @route '/updatetestimonial'
- */
-    const testimonialForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: testimonial.url(options),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\TestimonialsController::testimonial
- * @see app/Http/Controllers/TestimonialsController.php:110
- * @route '/updatetestimonial'
- */
-        testimonialForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: testimonial.url(options),
-            method: 'post',
-        })
-    
-    testimonial.form = testimonialForm
 /**
 * @see \App\Http\Controllers\AgentController::agent
  * @see app/Http/Controllers/AgentController.php:73
@@ -142,28 +100,6 @@ agent.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: agent.url(options),
     method: 'post',
 })
-
-    /**
-* @see \App\Http\Controllers\AgentController::agent
- * @see app/Http/Controllers/AgentController.php:73
- * @route '/updateagent'
- */
-    const agentForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: agent.url(options),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\AgentController::agent
- * @see app/Http/Controllers/AgentController.php:73
- * @route '/updateagent'
- */
-        agentForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: agent.url(options),
-            method: 'post',
-        })
-    
-    agent.form = agentForm
 const update = {
     property: Object.assign(property, property),
 testimonial: Object.assign(testimonial, testimonial),
