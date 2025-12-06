@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../../../wayfinder'
 /**
 * @see \App\Http\Controllers\FaqController::index
  * @see app/Http/Controllers/FaqController.php:15
@@ -42,6 +42,41 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\FaqController::index
+ * @see app/Http/Controllers/FaqController.php:15
+ * @route '/faq'
+ */
+    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: index.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\FaqController::index
+ * @see app/Http/Controllers/FaqController.php:15
+ * @route '/faq'
+ */
+        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: index.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\FaqController::index
+ * @see app/Http/Controllers/FaqController.php:15
+ * @route '/faq'
+ */
+        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: index.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    index.form = indexForm
 /**
 * @see \App\Http\Controllers\FaqController::create
  * @see app/Http/Controllers/FaqController.php:24
@@ -85,6 +120,41 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\FaqController::create
+ * @see app/Http/Controllers/FaqController.php:24
+ * @route '/faq/create'
+ */
+    const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: create.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\FaqController::create
+ * @see app/Http/Controllers/FaqController.php:24
+ * @route '/faq/create'
+ */
+        createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: create.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\FaqController::create
+ * @see app/Http/Controllers/FaqController.php:24
+ * @route '/faq/create'
+ */
+        createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: create.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    create.form = createForm
 /**
 * @see \App\Http\Controllers\FaqController::store
  * @see app/Http/Controllers/FaqController.php:32
@@ -119,6 +189,27 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
+    /**
+* @see \App\Http\Controllers\FaqController::store
+ * @see app/Http/Controllers/FaqController.php:32
+ * @route '/faq'
+ */
+    const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: store.url(options),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\FaqController::store
+ * @see app/Http/Controllers/FaqController.php:32
+ * @route '/faq'
+ */
+        storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: store.url(options),
+            method: 'post',
+        })
+    
+    store.form = storeForm
 /**
 * @see \App\Http\Controllers\FaqController::show
  * @see app/Http/Controllers/FaqController.php:49
@@ -186,6 +277,41 @@ show.head = (args: { faq: number | { id: number } } | [faq: number | { id: numbe
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\FaqController::show
+ * @see app/Http/Controllers/FaqController.php:49
+ * @route '/faq/{faq}'
+ */
+    const showForm = (args: { faq: number | { id: number } } | [faq: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: show.url(args, options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\FaqController::show
+ * @see app/Http/Controllers/FaqController.php:49
+ * @route '/faq/{faq}'
+ */
+        showForm.get = (args: { faq: number | { id: number } } | [faq: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: show.url(args, options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\FaqController::show
+ * @see app/Http/Controllers/FaqController.php:49
+ * @route '/faq/{faq}'
+ */
+        showForm.head = (args: { faq: number | { id: number } } | [faq: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: show.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    show.form = showForm
 /**
 * @see \App\Http\Controllers\FaqController::edit
  * @see app/Http/Controllers/FaqController.php:57
@@ -253,6 +379,41 @@ edit.head = (args: { faq: number | { id: number } } | [faq: number | { id: numbe
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\FaqController::edit
+ * @see app/Http/Controllers/FaqController.php:57
+ * @route '/faq/{faq}/edit'
+ */
+    const editForm = (args: { faq: number | { id: number } } | [faq: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: edit.url(args, options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\FaqController::edit
+ * @see app/Http/Controllers/FaqController.php:57
+ * @route '/faq/{faq}/edit'
+ */
+        editForm.get = (args: { faq: number | { id: number } } | [faq: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: edit.url(args, options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\FaqController::edit
+ * @see app/Http/Controllers/FaqController.php:57
+ * @route '/faq/{faq}/edit'
+ */
+        editForm.head = (args: { faq: number | { id: number } } | [faq: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: edit.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    edit.form = editForm
 /**
 * @see \App\Http\Controllers\FaqController::update
  * @see app/Http/Controllers/FaqController.php:65
@@ -320,6 +481,51 @@ update.patch = (args: { faq: number | { id: number } } | [faq: number | { id: nu
     method: 'patch',
 })
 
+    /**
+* @see \App\Http\Controllers\FaqController::update
+ * @see app/Http/Controllers/FaqController.php:65
+ * @route '/faq/{faq}'
+ */
+    const updateForm = (args: { faq: number | { id: number } } | [faq: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: update.url(args, {
+                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                        _method: 'PUT',
+                        ...(options?.query ?? options?.mergeQuery ?? {}),
+                    }
+                }),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\FaqController::update
+ * @see app/Http/Controllers/FaqController.php:65
+ * @route '/faq/{faq}'
+ */
+        updateForm.put = (args: { faq: number | { id: number } } | [faq: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: update.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'PUT',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+            /**
+* @see \App\Http\Controllers\FaqController::update
+ * @see app/Http/Controllers/FaqController.php:65
+ * @route '/faq/{faq}'
+ */
+        updateForm.patch = (args: { faq: number | { id: number } } | [faq: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: update.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'PATCH',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+    
+    update.form = updateForm
 /**
 * @see \App\Http\Controllers\FaqController::destroy
  * @see app/Http/Controllers/FaqController.php:76
@@ -377,6 +583,38 @@ destroy.delete = (args: { faq: number | { id: number } } | [faq: number | { id: 
     url: destroy.url(args, options),
     method: 'delete',
 })
+
+    /**
+* @see \App\Http\Controllers\FaqController::destroy
+ * @see app/Http/Controllers/FaqController.php:76
+ * @route '/faq/{faq}'
+ */
+    const destroyForm = (args: { faq: number | { id: number } } | [faq: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: destroy.url(args, {
+                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                        _method: 'DELETE',
+                        ...(options?.query ?? options?.mergeQuery ?? {}),
+                    }
+                }),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\FaqController::destroy
+ * @see app/Http/Controllers/FaqController.php:76
+ * @route '/faq/{faq}'
+ */
+        destroyForm.delete = (args: { faq: number | { id: number } } | [faq: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: destroy.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'DELETE',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+    
+    destroy.form = destroyForm
 const FaqController = { index, create, store, show, edit, update, destroy }
 
 export default FaqController

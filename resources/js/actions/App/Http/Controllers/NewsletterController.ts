@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition } from './../../../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition } from './../../../../wayfinder'
 /**
 * @see \App\Http\Controllers\NewsletterController::subscribe
  * @see app/Http/Controllers/NewsletterController.php:38
@@ -33,6 +33,27 @@ subscribe.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
+    /**
+* @see \App\Http\Controllers\NewsletterController::subscribe
+ * @see app/Http/Controllers/NewsletterController.php:38
+ * @route '/subscribe'
+ */
+    const subscribeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: subscribe.url(options),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\NewsletterController::subscribe
+ * @see app/Http/Controllers/NewsletterController.php:38
+ * @route '/subscribe'
+ */
+        subscribeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: subscribe.url(options),
+            method: 'post',
+        })
+    
+    subscribe.form = subscribeForm
 /**
 * @see \App\Http\Controllers\NewsletterController::newsletter
  * @see app/Http/Controllers/NewsletterController.php:30
@@ -76,6 +97,41 @@ newsletter.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\NewsletterController::newsletter
+ * @see app/Http/Controllers/NewsletterController.php:30
+ * @route '/newsletter'
+ */
+    const newsletterForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: newsletter.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\NewsletterController::newsletter
+ * @see app/Http/Controllers/NewsletterController.php:30
+ * @route '/newsletter'
+ */
+        newsletterForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: newsletter.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\NewsletterController::newsletter
+ * @see app/Http/Controllers/NewsletterController.php:30
+ * @route '/newsletter'
+ */
+        newsletterForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: newsletter.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    newsletter.form = newsletterForm
 /**
 * @see \App\Http\Controllers\NewsletterController::sendNewsletter
  * @see app/Http/Controllers/NewsletterController.php:61
@@ -109,6 +165,28 @@ sendNewsletter.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => 
     url: sendNewsletter.url(options),
     method: 'post',
 })
+
+    /**
+* @see \App\Http\Controllers\NewsletterController::sendNewsletter
+ * @see app/Http/Controllers/NewsletterController.php:61
+ * @route '/sendNewsletter'
+ */
+    const sendNewsletterForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: sendNewsletter.url(options),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\NewsletterController::sendNewsletter
+ * @see app/Http/Controllers/NewsletterController.php:61
+ * @route '/sendNewsletter'
+ */
+        sendNewsletterForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: sendNewsletter.url(options),
+            method: 'post',
+        })
+    
+    sendNewsletter.form = sendNewsletterForm
 const NewsletterController = { subscribe, newsletter, sendNewsletter }
 
 export default NewsletterController

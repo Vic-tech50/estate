@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\LocationController::index
  * @see app/Http/Controllers/LocationController.php:15
@@ -42,6 +42,41 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LocationController::index
+ * @see app/Http/Controllers/LocationController.php:15
+ * @route '/location'
+ */
+    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: index.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LocationController::index
+ * @see app/Http/Controllers/LocationController.php:15
+ * @route '/location'
+ */
+        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: index.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LocationController::index
+ * @see app/Http/Controllers/LocationController.php:15
+ * @route '/location'
+ */
+        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: index.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    index.form = indexForm
 /**
 * @see \App\Http\Controllers\LocationController::create
  * @see app/Http/Controllers/LocationController.php:26
@@ -85,6 +120,41 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LocationController::create
+ * @see app/Http/Controllers/LocationController.php:26
+ * @route '/location/create'
+ */
+    const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: create.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LocationController::create
+ * @see app/Http/Controllers/LocationController.php:26
+ * @route '/location/create'
+ */
+        createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: create.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LocationController::create
+ * @see app/Http/Controllers/LocationController.php:26
+ * @route '/location/create'
+ */
+        createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: create.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    create.form = createForm
 /**
 * @see \App\Http\Controllers\LocationController::store
  * @see app/Http/Controllers/LocationController.php:34
@@ -119,6 +189,27 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
+    /**
+* @see \App\Http\Controllers\LocationController::store
+ * @see app/Http/Controllers/LocationController.php:34
+ * @route '/location'
+ */
+    const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: store.url(options),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\LocationController::store
+ * @see app/Http/Controllers/LocationController.php:34
+ * @route '/location'
+ */
+        storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: store.url(options),
+            method: 'post',
+        })
+    
+    store.form = storeForm
 /**
 * @see \App\Http\Controllers\LocationController::show
  * @see app/Http/Controllers/LocationController.php:51
@@ -181,6 +272,41 @@ show.head = (args: { location: string | number } | [location: string | number ] 
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LocationController::show
+ * @see app/Http/Controllers/LocationController.php:51
+ * @route '/location/{location}'
+ */
+    const showForm = (args: { location: string | number } | [location: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: show.url(args, options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LocationController::show
+ * @see app/Http/Controllers/LocationController.php:51
+ * @route '/location/{location}'
+ */
+        showForm.get = (args: { location: string | number } | [location: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: show.url(args, options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LocationController::show
+ * @see app/Http/Controllers/LocationController.php:51
+ * @route '/location/{location}'
+ */
+        showForm.head = (args: { location: string | number } | [location: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: show.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    show.form = showForm
 /**
 * @see \App\Http\Controllers\LocationController::edit
  * @see app/Http/Controllers/LocationController.php:59
@@ -248,6 +374,41 @@ edit.head = (args: { location: number | { id: number } } | [location: number | {
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LocationController::edit
+ * @see app/Http/Controllers/LocationController.php:59
+ * @route '/location/{location}/edit'
+ */
+    const editForm = (args: { location: number | { id: number } } | [location: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: edit.url(args, options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LocationController::edit
+ * @see app/Http/Controllers/LocationController.php:59
+ * @route '/location/{location}/edit'
+ */
+        editForm.get = (args: { location: number | { id: number } } | [location: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: edit.url(args, options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LocationController::edit
+ * @see app/Http/Controllers/LocationController.php:59
+ * @route '/location/{location}/edit'
+ */
+        editForm.head = (args: { location: number | { id: number } } | [location: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: edit.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    edit.form = editForm
 /**
 * @see \App\Http\Controllers\LocationController::update
  * @see app/Http/Controllers/LocationController.php:67
@@ -310,6 +471,51 @@ update.patch = (args: { location: string | number } | [location: string | number
     method: 'patch',
 })
 
+    /**
+* @see \App\Http\Controllers\LocationController::update
+ * @see app/Http/Controllers/LocationController.php:67
+ * @route '/location/{location}'
+ */
+    const updateForm = (args: { location: string | number } | [location: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: update.url(args, {
+                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                        _method: 'PUT',
+                        ...(options?.query ?? options?.mergeQuery ?? {}),
+                    }
+                }),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\LocationController::update
+ * @see app/Http/Controllers/LocationController.php:67
+ * @route '/location/{location}'
+ */
+        updateForm.put = (args: { location: string | number } | [location: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: update.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'PUT',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+            /**
+* @see \App\Http\Controllers\LocationController::update
+ * @see app/Http/Controllers/LocationController.php:67
+ * @route '/location/{location}'
+ */
+        updateForm.patch = (args: { location: string | number } | [location: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: update.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'PATCH',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+    
+    update.form = updateForm
 /**
 * @see \App\Http\Controllers\LocationController::destroy
  * @see app/Http/Controllers/LocationController.php:75
@@ -367,6 +573,38 @@ destroy.delete = (args: { location: number | { id: number } } | [location: numbe
     url: destroy.url(args, options),
     method: 'delete',
 })
+
+    /**
+* @see \App\Http\Controllers\LocationController::destroy
+ * @see app/Http/Controllers/LocationController.php:75
+ * @route '/location/{location}'
+ */
+    const destroyForm = (args: { location: number | { id: number } } | [location: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: destroy.url(args, {
+                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                        _method: 'DELETE',
+                        ...(options?.query ?? options?.mergeQuery ?? {}),
+                    }
+                }),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\LocationController::destroy
+ * @see app/Http/Controllers/LocationController.php:75
+ * @route '/location/{location}'
+ */
+        destroyForm.delete = (args: { location: number | { id: number } } | [location: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: destroy.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'DELETE',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+    
+    destroy.form = destroyForm
 const location = {
     index: Object.assign(index, index),
 create: Object.assign(create, create),

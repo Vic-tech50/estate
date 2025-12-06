@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\TestimonialsController::index
  * @see app/Http/Controllers/TestimonialsController.php:15
@@ -42,6 +42,41 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\TestimonialsController::index
+ * @see app/Http/Controllers/TestimonialsController.php:15
+ * @route '/testimonials'
+ */
+    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: index.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\TestimonialsController::index
+ * @see app/Http/Controllers/TestimonialsController.php:15
+ * @route '/testimonials'
+ */
+        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: index.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\TestimonialsController::index
+ * @see app/Http/Controllers/TestimonialsController.php:15
+ * @route '/testimonials'
+ */
+        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: index.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    index.form = indexForm
 /**
 * @see \App\Http\Controllers\TestimonialsController::create
  * @see app/Http/Controllers/TestimonialsController.php:24
@@ -85,6 +120,41 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\TestimonialsController::create
+ * @see app/Http/Controllers/TestimonialsController.php:24
+ * @route '/testimonials/create'
+ */
+    const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: create.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\TestimonialsController::create
+ * @see app/Http/Controllers/TestimonialsController.php:24
+ * @route '/testimonials/create'
+ */
+        createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: create.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\TestimonialsController::create
+ * @see app/Http/Controllers/TestimonialsController.php:24
+ * @route '/testimonials/create'
+ */
+        createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: create.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    create.form = createForm
 /**
 * @see \App\Http\Controllers\TestimonialsController::store
  * @see app/Http/Controllers/TestimonialsController.php:32
@@ -119,6 +189,27 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
+    /**
+* @see \App\Http\Controllers\TestimonialsController::store
+ * @see app/Http/Controllers/TestimonialsController.php:32
+ * @route '/testimonials'
+ */
+    const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: store.url(options),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\TestimonialsController::store
+ * @see app/Http/Controllers/TestimonialsController.php:32
+ * @route '/testimonials'
+ */
+        storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: store.url(options),
+            method: 'post',
+        })
+    
+    store.form = storeForm
 /**
 * @see \App\Http\Controllers\TestimonialsController::show
  * @see app/Http/Controllers/TestimonialsController.php:58
@@ -181,6 +272,41 @@ show.head = (args: { testimonial: string | number } | [testimonial: string | num
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\TestimonialsController::show
+ * @see app/Http/Controllers/TestimonialsController.php:58
+ * @route '/testimonials/{testimonial}'
+ */
+    const showForm = (args: { testimonial: string | number } | [testimonial: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: show.url(args, options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\TestimonialsController::show
+ * @see app/Http/Controllers/TestimonialsController.php:58
+ * @route '/testimonials/{testimonial}'
+ */
+        showForm.get = (args: { testimonial: string | number } | [testimonial: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: show.url(args, options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\TestimonialsController::show
+ * @see app/Http/Controllers/TestimonialsController.php:58
+ * @route '/testimonials/{testimonial}'
+ */
+        showForm.head = (args: { testimonial: string | number } | [testimonial: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: show.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    show.form = showForm
 /**
 * @see \App\Http\Controllers\TestimonialsController::edit
  * @see app/Http/Controllers/TestimonialsController.php:66
@@ -248,6 +374,41 @@ edit.head = (args: { testimonial: number | { id: number } } | [testimonial: numb
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\TestimonialsController::edit
+ * @see app/Http/Controllers/TestimonialsController.php:66
+ * @route '/testimonials/{testimonial}/edit'
+ */
+    const editForm = (args: { testimonial: number | { id: number } } | [testimonial: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: edit.url(args, options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\TestimonialsController::edit
+ * @see app/Http/Controllers/TestimonialsController.php:66
+ * @route '/testimonials/{testimonial}/edit'
+ */
+        editForm.get = (args: { testimonial: number | { id: number } } | [testimonial: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: edit.url(args, options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\TestimonialsController::edit
+ * @see app/Http/Controllers/TestimonialsController.php:66
+ * @route '/testimonials/{testimonial}/edit'
+ */
+        editForm.head = (args: { testimonial: number | { id: number } } | [testimonial: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: edit.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    edit.form = editForm
 /**
 * @see \App\Http\Controllers\TestimonialsController::update
  * @see app/Http/Controllers/TestimonialsController.php:0
@@ -310,6 +471,51 @@ update.patch = (args: { testimonial: string | number } | [testimonial: string | 
     method: 'patch',
 })
 
+    /**
+* @see \App\Http\Controllers\TestimonialsController::update
+ * @see app/Http/Controllers/TestimonialsController.php:0
+ * @route '/testimonials/{testimonial}'
+ */
+    const updateForm = (args: { testimonial: string | number } | [testimonial: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: update.url(args, {
+                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                        _method: 'PUT',
+                        ...(options?.query ?? options?.mergeQuery ?? {}),
+                    }
+                }),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\TestimonialsController::update
+ * @see app/Http/Controllers/TestimonialsController.php:0
+ * @route '/testimonials/{testimonial}'
+ */
+        updateForm.put = (args: { testimonial: string | number } | [testimonial: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: update.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'PUT',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+            /**
+* @see \App\Http\Controllers\TestimonialsController::update
+ * @see app/Http/Controllers/TestimonialsController.php:0
+ * @route '/testimonials/{testimonial}'
+ */
+        updateForm.patch = (args: { testimonial: string | number } | [testimonial: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: update.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'PATCH',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+    
+    update.form = updateForm
 /**
 * @see \App\Http\Controllers\TestimonialsController::destroy
  * @see app/Http/Controllers/TestimonialsController.php:132
@@ -362,6 +568,38 @@ destroy.delete = (args: { testimonial: string | number } | [testimonial: string 
     url: destroy.url(args, options),
     method: 'delete',
 })
+
+    /**
+* @see \App\Http\Controllers\TestimonialsController::destroy
+ * @see app/Http/Controllers/TestimonialsController.php:132
+ * @route '/testimonials/{testimonial}'
+ */
+    const destroyForm = (args: { testimonial: string | number } | [testimonial: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: destroy.url(args, {
+                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                        _method: 'DELETE',
+                        ...(options?.query ?? options?.mergeQuery ?? {}),
+                    }
+                }),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\TestimonialsController::destroy
+ * @see app/Http/Controllers/TestimonialsController.php:132
+ * @route '/testimonials/{testimonial}'
+ */
+        destroyForm.delete = (args: { testimonial: string | number } | [testimonial: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: destroy.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'DELETE',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+    
+    destroy.form = destroyForm
 const testimonials = {
     index: Object.assign(index, index),
 create: Object.assign(create, create),

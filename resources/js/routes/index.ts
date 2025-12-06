@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults, validateParameters } from './../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults, validateParameters } from './../wayfinder'
 /**
 * @see \App\Http\Controllers\Auth\AuthenticatedSessionController::login
  * @see app/Http/Controllers/Auth/AuthenticatedSessionController.php:21
@@ -42,6 +42,41 @@ login.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\Auth\AuthenticatedSessionController::login
+ * @see app/Http/Controllers/Auth/AuthenticatedSessionController.php:21
+ * @route '/login'
+ */
+    const loginForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: login.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\Auth\AuthenticatedSessionController::login
+ * @see app/Http/Controllers/Auth/AuthenticatedSessionController.php:21
+ * @route '/login'
+ */
+        loginForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: login.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\Auth\AuthenticatedSessionController::login
+ * @see app/Http/Controllers/Auth/AuthenticatedSessionController.php:21
+ * @route '/login'
+ */
+        loginForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: login.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    login.form = loginForm
 /**
 * @see \App\Http\Controllers\Auth\AuthenticatedSessionController::logout
  * @see app/Http/Controllers/Auth/AuthenticatedSessionController.php:65
@@ -76,6 +111,27 @@ logout.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
+    /**
+* @see \App\Http\Controllers\Auth\AuthenticatedSessionController::logout
+ * @see app/Http/Controllers/Auth/AuthenticatedSessionController.php:65
+ * @route '/logout'
+ */
+    const logoutForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: logout.url(options),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\Auth\AuthenticatedSessionController::logout
+ * @see app/Http/Controllers/Auth/AuthenticatedSessionController.php:65
+ * @route '/logout'
+ */
+        logoutForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: logout.url(options),
+            method: 'post',
+        })
+    
+    logout.form = logoutForm
 /**
 * @see \Laravel\Telescope\Http\Controllers\HomeController::telescope
  * @see vendor/laravel/telescope/src/Http/Controllers/HomeController.php:15
@@ -142,6 +198,41 @@ telescope.head = (args?: { view?: string | number } | [view: string | number ] |
     method: 'head',
 })
 
+    /**
+* @see \Laravel\Telescope\Http\Controllers\HomeController::telescope
+ * @see vendor/laravel/telescope/src/Http/Controllers/HomeController.php:15
+ * @route '/telescope/{view?}'
+ */
+    const telescopeForm = (args?: { view?: string | number } | [view: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: telescope.url(args, options),
+        method: 'get',
+    })
+
+            /**
+* @see \Laravel\Telescope\Http\Controllers\HomeController::telescope
+ * @see vendor/laravel/telescope/src/Http/Controllers/HomeController.php:15
+ * @route '/telescope/{view?}'
+ */
+        telescopeForm.get = (args?: { view?: string | number } | [view: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: telescope.url(args, options),
+            method: 'get',
+        })
+            /**
+* @see \Laravel\Telescope\Http\Controllers\HomeController::telescope
+ * @see vendor/laravel/telescope/src/Http/Controllers/HomeController.php:15
+ * @route '/telescope/{view?}'
+ */
+        telescopeForm.head = (args?: { view?: string | number } | [view: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: telescope.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    telescope.form = telescopeForm
 /**
 * @see \App\Http\Controllers\HomeController::dashboard
  * @see app/Http/Controllers/HomeController.php:10
@@ -185,6 +276,41 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\HomeController::dashboard
+ * @see app/Http/Controllers/HomeController.php:10
+ * @route '/dashboard'
+ */
+    const dashboardForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: dashboard.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\HomeController::dashboard
+ * @see app/Http/Controllers/HomeController.php:10
+ * @route '/dashboard'
+ */
+        dashboardForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: dashboard.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\HomeController::dashboard
+ * @see app/Http/Controllers/HomeController.php:10
+ * @route '/dashboard'
+ */
+        dashboardForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: dashboard.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    dashboard.form = dashboardForm
 /**
 * @see \App\Http\Controllers\Auth\RegisteredUserController::register
  * @see app/Http/Controllers/Auth/RegisteredUserController.php:23
@@ -227,3 +353,39 @@ register.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: register.url(options),
     method: 'head',
 })
+
+    /**
+* @see \App\Http\Controllers\Auth\RegisteredUserController::register
+ * @see app/Http/Controllers/Auth/RegisteredUserController.php:23
+ * @route '/register'
+ */
+    const registerForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: register.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\Auth\RegisteredUserController::register
+ * @see app/Http/Controllers/Auth/RegisteredUserController.php:23
+ * @route '/register'
+ */
+        registerForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: register.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\Auth\RegisteredUserController::register
+ * @see app/Http/Controllers/Auth/RegisteredUserController.php:23
+ * @route '/register'
+ */
+        registerForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: register.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    register.form = registerForm

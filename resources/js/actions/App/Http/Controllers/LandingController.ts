@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../../../wayfinder'
 /**
 * @see \App\Http\Controllers\LandingController::index
  * @see app/Http/Controllers/LandingController.php:21
@@ -42,6 +42,41 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LandingController::index
+ * @see app/Http/Controllers/LandingController.php:21
+ * @route '/'
+ */
+    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: index.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LandingController::index
+ * @see app/Http/Controllers/LandingController.php:21
+ * @route '/'
+ */
+        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: index.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LandingController::index
+ * @see app/Http/Controllers/LandingController.php:21
+ * @route '/'
+ */
+        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: index.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    index.form = indexForm
 /**
 * @see \App\Http\Controllers\LandingController::faqs
  * @see app/Http/Controllers/LandingController.php:47
@@ -85,6 +120,41 @@ faqs.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LandingController::faqs
+ * @see app/Http/Controllers/LandingController.php:47
+ * @route '/faqs'
+ */
+    const faqsForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: faqs.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LandingController::faqs
+ * @see app/Http/Controllers/LandingController.php:47
+ * @route '/faqs'
+ */
+        faqsForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: faqs.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LandingController::faqs
+ * @see app/Http/Controllers/LandingController.php:47
+ * @route '/faqs'
+ */
+        faqsForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: faqs.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    faqs.form = faqsForm
 /**
 * @see \App\Http\Controllers\LandingController::contact
  * @see app/Http/Controllers/LandingController.php:53
@@ -128,6 +198,41 @@ contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LandingController::contact
+ * @see app/Http/Controllers/LandingController.php:53
+ * @route '/contact'
+ */
+    const contactForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: contact.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LandingController::contact
+ * @see app/Http/Controllers/LandingController.php:53
+ * @route '/contact'
+ */
+        contactForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: contact.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LandingController::contact
+ * @see app/Http/Controllers/LandingController.php:53
+ * @route '/contact'
+ */
+        contactForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: contact.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    contact.form = contactForm
 /**
 * @see \App\Http\Controllers\LandingController::sendContact
  * @see app/Http/Controllers/LandingController.php:59
@@ -162,6 +267,27 @@ sendContact.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
+    /**
+* @see \App\Http\Controllers\LandingController::sendContact
+ * @see app/Http/Controllers/LandingController.php:59
+ * @route '/sendcontact'
+ */
+    const sendContactForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: sendContact.url(options),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\LandingController::sendContact
+ * @see app/Http/Controllers/LandingController.php:59
+ * @route '/sendcontact'
+ */
+        sendContactForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: sendContact.url(options),
+            method: 'post',
+        })
+    
+    sendContact.form = sendContactForm
 /**
 * @see \App\Http\Controllers\LandingController::blog
  * @see app/Http/Controllers/LandingController.php:94
@@ -205,6 +331,41 @@ blog.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LandingController::blog
+ * @see app/Http/Controllers/LandingController.php:94
+ * @route '/blogs'
+ */
+    const blogForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: blog.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LandingController::blog
+ * @see app/Http/Controllers/LandingController.php:94
+ * @route '/blogs'
+ */
+        blogForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: blog.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LandingController::blog
+ * @see app/Http/Controllers/LandingController.php:94
+ * @route '/blogs'
+ */
+        blogForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: blog.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    blog.form = blogForm
 /**
 * @see \App\Http\Controllers\LandingController::property
  * @see app/Http/Controllers/LandingController.php:126
@@ -248,6 +409,41 @@ property.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LandingController::property
+ * @see app/Http/Controllers/LandingController.php:126
+ * @route '/property'
+ */
+    const propertyForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: property.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LandingController::property
+ * @see app/Http/Controllers/LandingController.php:126
+ * @route '/property'
+ */
+        propertyForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: property.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LandingController::property
+ * @see app/Http/Controllers/LandingController.php:126
+ * @route '/property'
+ */
+        propertyForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: property.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    property.form = propertyForm
 /**
 * @see \App\Http\Controllers\LandingController::disclaimer
  * @see app/Http/Controllers/LandingController.php:75
@@ -291,6 +487,41 @@ disclaimer.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LandingController::disclaimer
+ * @see app/Http/Controllers/LandingController.php:75
+ * @route '/disclaimer'
+ */
+    const disclaimerForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: disclaimer.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LandingController::disclaimer
+ * @see app/Http/Controllers/LandingController.php:75
+ * @route '/disclaimer'
+ */
+        disclaimerForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: disclaimer.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LandingController::disclaimer
+ * @see app/Http/Controllers/LandingController.php:75
+ * @route '/disclaimer'
+ */
+        disclaimerForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: disclaimer.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    disclaimer.form = disclaimerForm
 /**
 * @see \App\Http\Controllers\LandingController::terms
  * @see app/Http/Controllers/LandingController.php:81
@@ -334,6 +565,41 @@ terms.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LandingController::terms
+ * @see app/Http/Controllers/LandingController.php:81
+ * @route '/terms'
+ */
+    const termsForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: terms.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LandingController::terms
+ * @see app/Http/Controllers/LandingController.php:81
+ * @route '/terms'
+ */
+        termsForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: terms.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LandingController::terms
+ * @see app/Http/Controllers/LandingController.php:81
+ * @route '/terms'
+ */
+        termsForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: terms.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    terms.form = termsForm
 /**
 * @see \App\Http\Controllers\LandingController::privacy
  * @see app/Http/Controllers/LandingController.php:87
@@ -377,6 +643,41 @@ privacy.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LandingController::privacy
+ * @see app/Http/Controllers/LandingController.php:87
+ * @route '/privacy'
+ */
+    const privacyForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: privacy.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LandingController::privacy
+ * @see app/Http/Controllers/LandingController.php:87
+ * @route '/privacy'
+ */
+        privacyForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: privacy.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LandingController::privacy
+ * @see app/Http/Controllers/LandingController.php:87
+ * @route '/privacy'
+ */
+        privacyForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: privacy.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    privacy.form = privacyForm
 /**
 * @see \App\Http\Controllers\LandingController::property_detail
  * @see app/Http/Controllers/LandingController.php:132
@@ -444,6 +745,41 @@ property_detail.head = (args: { property: string | { title: string } } | [proper
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\LandingController::property_detail
+ * @see app/Http/Controllers/LandingController.php:132
+ * @route '/property_details/{property}'
+ */
+    const property_detailForm = (args: { property: string | { title: string } } | [property: string | { title: string } ] | string | { title: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: property_detail.url(args, options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LandingController::property_detail
+ * @see app/Http/Controllers/LandingController.php:132
+ * @route '/property_details/{property}'
+ */
+        property_detailForm.get = (args: { property: string | { title: string } } | [property: string | { title: string } ] | string | { title: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: property_detail.url(args, options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LandingController::property_detail
+ * @see app/Http/Controllers/LandingController.php:132
+ * @route '/property_details/{property}'
+ */
+        property_detailForm.head = (args: { property: string | { title: string } } | [property: string | { title: string } ] | string | { title: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: property_detail.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    property_detail.form = property_detailForm
 /**
 * @see \App\Http\Controllers\LandingController::blog_detail
  * @see app/Http/Controllers/LandingController.php:106
@@ -510,6 +846,42 @@ blog_detail.head = (args: { blog: string | { slug: string } } | [blog: string | 
     url: blog_detail.url(args, options),
     method: 'head',
 })
+
+    /**
+* @see \App\Http\Controllers\LandingController::blog_detail
+ * @see app/Http/Controllers/LandingController.php:106
+ * @route '/blog_details/{blog}'
+ */
+    const blog_detailForm = (args: { blog: string | { slug: string } } | [blog: string | { slug: string } ] | string | { slug: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: blog_detail.url(args, options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\LandingController::blog_detail
+ * @see app/Http/Controllers/LandingController.php:106
+ * @route '/blog_details/{blog}'
+ */
+        blog_detailForm.get = (args: { blog: string | { slug: string } } | [blog: string | { slug: string } ] | string | { slug: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: blog_detail.url(args, options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\LandingController::blog_detail
+ * @see app/Http/Controllers/LandingController.php:106
+ * @route '/blog_details/{blog}'
+ */
+        blog_detailForm.head = (args: { blog: string | { slug: string } } | [blog: string | { slug: string } ] | string | { slug: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: blog_detail.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    blog_detail.form = blog_detailForm
 const LandingController = { index, faqs, contact, sendContact, blog, property, disclaimer, terms, privacy, property_detail, blog_detail }
 
 export default LandingController

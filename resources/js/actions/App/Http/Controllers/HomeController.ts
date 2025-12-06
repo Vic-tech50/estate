@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition } from './../../../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition } from './../../../../wayfinder'
 /**
 * @see \App\Http\Controllers\HomeController::agent
  * @see app/Http/Controllers/HomeController.php:15
@@ -42,6 +42,41 @@ agent.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
+    /**
+* @see \App\Http\Controllers\HomeController::agent
+ * @see app/Http/Controllers/HomeController.php:15
+ * @route '/agent/dashboard'
+ */
+    const agentForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: agent.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\HomeController::agent
+ * @see app/Http/Controllers/HomeController.php:15
+ * @route '/agent/dashboard'
+ */
+        agentForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: agent.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\HomeController::agent
+ * @see app/Http/Controllers/HomeController.php:15
+ * @route '/agent/dashboard'
+ */
+        agentForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: agent.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    agent.form = agentForm
 /**
 * @see \App\Http\Controllers\HomeController::admin
  * @see app/Http/Controllers/HomeController.php:10
@@ -84,6 +119,42 @@ admin.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: admin.url(options),
     method: 'head',
 })
+
+    /**
+* @see \App\Http\Controllers\HomeController::admin
+ * @see app/Http/Controllers/HomeController.php:10
+ * @route '/dashboard'
+ */
+    const adminForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: admin.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\HomeController::admin
+ * @see app/Http/Controllers/HomeController.php:10
+ * @route '/dashboard'
+ */
+        adminForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: admin.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\HomeController::admin
+ * @see app/Http/Controllers/HomeController.php:10
+ * @route '/dashboard'
+ */
+        adminForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: admin.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    admin.form = adminForm
 const HomeController = { agent, admin }
 
 export default HomeController

@@ -13,13 +13,9 @@ export default defineConfig({
         }),
         react(),
         tailwindcss(),
-           // ❌ Disable Wayfinder on Vercel
-        process.env.VERCEL ? null : wayfinder({
-            withForm: true,
-        })
-        // wayfinder({
-        //     formVariants: true,
-        // }),
+        wayfinder({
+            formVariants: true,
+        }),
     ],
     esbuild: {
         jsx: 'automatic',
