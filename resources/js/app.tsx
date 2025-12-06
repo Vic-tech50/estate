@@ -5,7 +5,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot } from 'react-dom/client';
 import { initializeTheme } from './hooks/use-appearance';
 // import {route} from 'ziggy-js'
-import { Ziggy } from './ziggy';  // the generated config file
+import { Ziggy } from '@/ziggy';  // the generated config file
 import { ToastContainer, toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
