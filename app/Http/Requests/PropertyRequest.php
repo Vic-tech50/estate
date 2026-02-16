@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 
-class PropertyRequest extends FormRequest 
+class PropertyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -35,7 +35,7 @@ class PropertyRequest extends FormRequest
             'latitude' => 'nullable|string|max:255',
             'price' => 'required|integer',
             'currency' => 'required|string|max:10',
-            'propertyId' => 'required|string|max:255|unique:properties,propertyId',
+            // 'propertyId' => 'required|string|max:255|unique:properties,propertyId',
             'size' => 'required|integer',
             'floor' => 'required|string|max:255',
             'garage' => 'nullable|integer|min:0',
@@ -51,14 +51,14 @@ class PropertyRequest extends FormRequest
             'parkingSpace' => 'nullable|string|max:255',
             'petFriendly' => 'nullable|string|max:255',
             'water' => 'nullable|string|max:255',
-            'internet' => 'nullable|string|max:255', 
+            'internet' => 'nullable|string|max:255',
             'video' => 'nullable|url',
             'description' => 'nullable|string',
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'in:available,sold,rented',
             'is_featured' => 'boolean',
-            
+
         ];
     }
 }

@@ -15,18 +15,12 @@ import { type NavItem } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
 import {
     BarChart3,
-    Bookmark,
-    BookOpen,
     FileText,
-    Folder,
-    FolderArchive,
     HelpCircle,
-    Image,
     Layers,
     LayoutGrid,
     LayoutTemplate,
     Mail,
-    MapPin,
     MessageSquareDot,
     Send,
     Settings,
@@ -55,7 +49,13 @@ const mainNavItems: NavItem[] = [
     },
 
     {
-        title: 'Notifications',
+        title: 'Agent Management',
+        href: '/agent',
+        icon: Users,
+    },
+
+    {
+        title: 'Alerts & Notifications',
         href: '/notification',
         icon: MessageSquareDot,
     },
@@ -73,48 +73,13 @@ const mainNavItems: NavItem[] = [
     // },
 
     {
-        title: 'Agents',
-        href: '/agent',
-        icon: Users,
-    },
-
-    {
         title: 'Blog',
         href: '/blog',
         icon: FileText,
     },
 
     {
-        title: 'Site Content',
-        href: '/site_content',
-        icon: Layers,
-    },
-
-    {
-        title: 'Site Settings',
-        href: '/site_settings',
-        icon: Settings,
-    },
-
-    {
-        title: 'Site Analytics',
-        href: '/telescope',
-        icon: BarChart3,
-    },
-    {
-        title: 'Site templates',
-        href: '/site_templates',
-        icon: LayoutTemplate,
-    },
-
-    // {
-    //     title: 'Site Images',
-    //     href: '/site_images',
-    //     icon: Image,
-    // },
-
-    {
-        title: 'Faq',
+        title: 'FAQS',
         href: '/faq',
         icon: HelpCircle,
     },
@@ -126,13 +91,42 @@ const mainNavItems: NavItem[] = [
     },
 
     {
-        title: 'Newsletter',
+        title: 'Email Campaigns',
         href: '/newsletter',
         icon: Send,
     },
 
     {
-        title: 'Repair Website',
+        title: 'Website Content',
+        href: '/site_content',
+        icon: Layers,
+    },
+
+    {
+        title: 'System Settings',
+        href: '/site_settings',
+        icon: Settings,
+    },
+
+    {
+        title: 'Site Analytics',
+        href: '/telescope',
+        icon: BarChart3,
+    },
+    {
+        title: 'Templates',
+        href: '/site_templates',
+        icon: LayoutTemplate,
+    },
+
+    // {
+    //     title: 'Site Images',
+    //     href: '/site_images',
+    //     icon: Image,
+    // },
+
+    {
+        title: 'Maintenance Requests',
         href: '/repair',
         icon: Mail,
     },

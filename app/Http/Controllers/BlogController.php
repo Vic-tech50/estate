@@ -60,7 +60,7 @@ class BlogController extends Controller
 
 
         Blog::create($validated);
-
+ 
         return redirect()->route('blog.index')->with('success', 'Blog post created successfully.');
     }
 

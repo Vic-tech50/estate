@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:15
+ * @see app/Http/Controllers/HomeController.php:34
  * @route '/agent/dashboard'
  */
 export const dashboard = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ dashboard.definition = {
 
 /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:15
+ * @see app/Http/Controllers/HomeController.php:34
  * @route '/agent/dashboard'
  */
 dashboard.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ dashboard.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:15
+ * @see app/Http/Controllers/HomeController.php:34
  * @route '/agent/dashboard'
  */
 dashboard.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -34,7 +34,7 @@ dashboard.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:15
+ * @see app/Http/Controllers/HomeController.php:34
  * @route '/agent/dashboard'
  */
 dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -44,7 +44,7 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:15
+ * @see app/Http/Controllers/HomeController.php:34
  * @route '/agent/dashboard'
  */
     const dashboardForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -54,7 +54,7 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:15
+ * @see app/Http/Controllers/HomeController.php:34
  * @route '/agent/dashboard'
  */
         dashboardForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -63,7 +63,7 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:15
+ * @see app/Http/Controllers/HomeController.php:34
  * @route '/agent/dashboard'
  */
         dashboardForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({

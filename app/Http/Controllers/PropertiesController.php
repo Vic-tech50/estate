@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Request;
 use Inertia\Inertia;
 use App\Models\Property;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+
 
 class PropertiesController extends Controller
 {
@@ -61,6 +63,7 @@ class PropertiesController extends Controller
         if ($user->role == 'agent') {
             $validated['agentid'] = $userid;
             $validated['status'] = 'pending';
+            $validated['propertyId'] = Str::random(10);
         }
 
         // Create the property

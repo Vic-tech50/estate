@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\PropertiesController::index
- * @see app/Http/Controllers/PropertiesController.php:21
+ * @see app/Http/Controllers/PropertiesController.php:23
  * @route '/properties'
  */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ index.definition = {
 
 /**
 * @see \App\Http\Controllers\PropertiesController::index
- * @see app/Http/Controllers/PropertiesController.php:21
+ * @see app/Http/Controllers/PropertiesController.php:23
  * @route '/properties'
  */
 index.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ index.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\PropertiesController::index
- * @see app/Http/Controllers/PropertiesController.php:21
+ * @see app/Http/Controllers/PropertiesController.php:23
  * @route '/properties'
  */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -34,7 +34,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\PropertiesController::index
- * @see app/Http/Controllers/PropertiesController.php:21
+ * @see app/Http/Controllers/PropertiesController.php:23
  * @route '/properties'
  */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -44,7 +44,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\PropertiesController::index
- * @see app/Http/Controllers/PropertiesController.php:21
+ * @see app/Http/Controllers/PropertiesController.php:23
  * @route '/properties'
  */
     const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -54,7 +54,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\PropertiesController::index
- * @see app/Http/Controllers/PropertiesController.php:21
+ * @see app/Http/Controllers/PropertiesController.php:23
  * @route '/properties'
  */
         indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -63,7 +63,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\PropertiesController::index
- * @see app/Http/Controllers/PropertiesController.php:21
+ * @see app/Http/Controllers/PropertiesController.php:23
  * @route '/properties'
  */
         indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -79,7 +79,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     index.form = indexForm
 /**
 * @see \App\Http\Controllers\PropertiesController::create
- * @see app/Http/Controllers/PropertiesController.php:32
+ * @see app/Http/Controllers/PropertiesController.php:34
  * @route '/properties/create'
  */
 export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -94,7 +94,7 @@ create.definition = {
 
 /**
 * @see \App\Http\Controllers\PropertiesController::create
- * @see app/Http/Controllers/PropertiesController.php:32
+ * @see app/Http/Controllers/PropertiesController.php:34
  * @route '/properties/create'
  */
 create.url = (options?: RouteQueryOptions) => {
@@ -103,7 +103,7 @@ create.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\PropertiesController::create
- * @see app/Http/Controllers/PropertiesController.php:32
+ * @see app/Http/Controllers/PropertiesController.php:34
  * @route '/properties/create'
  */
 create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -112,7 +112,7 @@ create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\PropertiesController::create
- * @see app/Http/Controllers/PropertiesController.php:32
+ * @see app/Http/Controllers/PropertiesController.php:34
  * @route '/properties/create'
  */
 create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -122,7 +122,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\PropertiesController::create
- * @see app/Http/Controllers/PropertiesController.php:32
+ * @see app/Http/Controllers/PropertiesController.php:34
  * @route '/properties/create'
  */
     const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -132,7 +132,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\PropertiesController::create
- * @see app/Http/Controllers/PropertiesController.php:32
+ * @see app/Http/Controllers/PropertiesController.php:34
  * @route '/properties/create'
  */
         createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -141,7 +141,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\PropertiesController::create
- * @see app/Http/Controllers/PropertiesController.php:32
+ * @see app/Http/Controllers/PropertiesController.php:34
  * @route '/properties/create'
  */
         createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -157,7 +157,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     create.form = createForm
 /**
 * @see \App\Http\Controllers\PropertiesController::store
- * @see app/Http/Controllers/PropertiesController.php:40
+ * @see app/Http/Controllers/PropertiesController.php:42
  * @route '/properties'
  */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -172,7 +172,7 @@ store.definition = {
 
 /**
 * @see \App\Http\Controllers\PropertiesController::store
- * @see app/Http/Controllers/PropertiesController.php:40
+ * @see app/Http/Controllers/PropertiesController.php:42
  * @route '/properties'
  */
 store.url = (options?: RouteQueryOptions) => {
@@ -181,7 +181,7 @@ store.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\PropertiesController::store
- * @see app/Http/Controllers/PropertiesController.php:40
+ * @see app/Http/Controllers/PropertiesController.php:42
  * @route '/properties'
  */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -191,7 +191,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
     /**
 * @see \App\Http\Controllers\PropertiesController::store
- * @see app/Http/Controllers/PropertiesController.php:40
+ * @see app/Http/Controllers/PropertiesController.php:42
  * @route '/properties'
  */
     const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -201,7 +201,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
             /**
 * @see \App\Http\Controllers\PropertiesController::store
- * @see app/Http/Controllers/PropertiesController.php:40
+ * @see app/Http/Controllers/PropertiesController.php:42
  * @route '/properties'
  */
         storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -212,7 +212,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     store.form = storeForm
 /**
 * @see \App\Http\Controllers\PropertiesController::show
- * @see app/Http/Controllers/PropertiesController.php:75
+ * @see app/Http/Controllers/PropertiesController.php:78
  * @route '/properties/{property}'
  */
 export const show = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -227,7 +227,7 @@ show.definition = {
 
 /**
 * @see \App\Http\Controllers\PropertiesController::show
- * @see app/Http/Controllers/PropertiesController.php:75
+ * @see app/Http/Controllers/PropertiesController.php:78
  * @route '/properties/{property}'
  */
 show.url = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
@@ -260,7 +260,7 @@ show.url = (args: { property: number | { id: number } } | [property: number | { 
 
 /**
 * @see \App\Http\Controllers\PropertiesController::show
- * @see app/Http/Controllers/PropertiesController.php:75
+ * @see app/Http/Controllers/PropertiesController.php:78
  * @route '/properties/{property}'
  */
 show.get = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -269,7 +269,7 @@ show.get = (args: { property: number | { id: number } } | [property: number | { 
 })
 /**
 * @see \App\Http\Controllers\PropertiesController::show
- * @see app/Http/Controllers/PropertiesController.php:75
+ * @see app/Http/Controllers/PropertiesController.php:78
  * @route '/properties/{property}'
  */
 show.head = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -279,7 +279,7 @@ show.head = (args: { property: number | { id: number } } | [property: number | {
 
     /**
 * @see \App\Http\Controllers\PropertiesController::show
- * @see app/Http/Controllers/PropertiesController.php:75
+ * @see app/Http/Controllers/PropertiesController.php:78
  * @route '/properties/{property}'
  */
     const showForm = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -289,7 +289,7 @@ show.head = (args: { property: number | { id: number } } | [property: number | {
 
             /**
 * @see \App\Http\Controllers\PropertiesController::show
- * @see app/Http/Controllers/PropertiesController.php:75
+ * @see app/Http/Controllers/PropertiesController.php:78
  * @route '/properties/{property}'
  */
         showForm.get = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -298,7 +298,7 @@ show.head = (args: { property: number | { id: number } } | [property: number | {
         })
             /**
 * @see \App\Http\Controllers\PropertiesController::show
- * @see app/Http/Controllers/PropertiesController.php:75
+ * @see app/Http/Controllers/PropertiesController.php:78
  * @route '/properties/{property}'
  */
         showForm.head = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -314,7 +314,7 @@ show.head = (args: { property: number | { id: number } } | [property: number | {
     show.form = showForm
 /**
 * @see \App\Http\Controllers\PropertiesController::edit
- * @see app/Http/Controllers/PropertiesController.php:85
+ * @see app/Http/Controllers/PropertiesController.php:88
  * @route '/properties/{property}/edit'
  */
 export const edit = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -329,7 +329,7 @@ edit.definition = {
 
 /**
 * @see \App\Http\Controllers\PropertiesController::edit
- * @see app/Http/Controllers/PropertiesController.php:85
+ * @see app/Http/Controllers/PropertiesController.php:88
  * @route '/properties/{property}/edit'
  */
 edit.url = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
@@ -362,7 +362,7 @@ edit.url = (args: { property: number | { id: number } } | [property: number | { 
 
 /**
 * @see \App\Http\Controllers\PropertiesController::edit
- * @see app/Http/Controllers/PropertiesController.php:85
+ * @see app/Http/Controllers/PropertiesController.php:88
  * @route '/properties/{property}/edit'
  */
 edit.get = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -371,7 +371,7 @@ edit.get = (args: { property: number | { id: number } } | [property: number | { 
 })
 /**
 * @see \App\Http\Controllers\PropertiesController::edit
- * @see app/Http/Controllers/PropertiesController.php:85
+ * @see app/Http/Controllers/PropertiesController.php:88
  * @route '/properties/{property}/edit'
  */
 edit.head = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -381,7 +381,7 @@ edit.head = (args: { property: number | { id: number } } | [property: number | {
 
     /**
 * @see \App\Http\Controllers\PropertiesController::edit
- * @see app/Http/Controllers/PropertiesController.php:85
+ * @see app/Http/Controllers/PropertiesController.php:88
  * @route '/properties/{property}/edit'
  */
     const editForm = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -391,7 +391,7 @@ edit.head = (args: { property: number | { id: number } } | [property: number | {
 
             /**
 * @see \App\Http\Controllers\PropertiesController::edit
- * @see app/Http/Controllers/PropertiesController.php:85
+ * @see app/Http/Controllers/PropertiesController.php:88
  * @route '/properties/{property}/edit'
  */
         editForm.get = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -400,7 +400,7 @@ edit.head = (args: { property: number | { id: number } } | [property: number | {
         })
             /**
 * @see \App\Http\Controllers\PropertiesController::edit
- * @see app/Http/Controllers/PropertiesController.php:85
+ * @see app/Http/Controllers/PropertiesController.php:88
  * @route '/properties/{property}/edit'
  */
         editForm.head = (args: { property: number | { id: number } } | [property: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -523,7 +523,7 @@ update.patch = (args: { property: string | number } | [property: string | number
     update.form = updateForm
 /**
 * @see \App\Http\Controllers\PropertiesController::destroy
- * @see app/Http/Controllers/PropertiesController.php:139
+ * @see app/Http/Controllers/PropertiesController.php:142
  * @route '/properties/{property}'
  */
 export const destroy = (args: { property: string | number } | [property: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -538,7 +538,7 @@ destroy.definition = {
 
 /**
 * @see \App\Http\Controllers\PropertiesController::destroy
- * @see app/Http/Controllers/PropertiesController.php:139
+ * @see app/Http/Controllers/PropertiesController.php:142
  * @route '/properties/{property}'
  */
 destroy.url = (args: { property: string | number } | [property: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -566,7 +566,7 @@ destroy.url = (args: { property: string | number } | [property: string | number 
 
 /**
 * @see \App\Http\Controllers\PropertiesController::destroy
- * @see app/Http/Controllers/PropertiesController.php:139
+ * @see app/Http/Controllers/PropertiesController.php:142
  * @route '/properties/{property}'
  */
 destroy.delete = (args: { property: string | number } | [property: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -576,7 +576,7 @@ destroy.delete = (args: { property: string | number } | [property: string | numb
 
     /**
 * @see \App\Http\Controllers\PropertiesController::destroy
- * @see app/Http/Controllers/PropertiesController.php:139
+ * @see app/Http/Controllers/PropertiesController.php:142
  * @route '/properties/{property}'
  */
     const destroyForm = (args: { property: string | number } | [property: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -591,7 +591,7 @@ destroy.delete = (args: { property: string | number } | [property: string | numb
 
             /**
 * @see \App\Http\Controllers\PropertiesController::destroy
- * @see app/Http/Controllers/PropertiesController.php:139
+ * @see app/Http/Controllers/PropertiesController.php:142
  * @route '/properties/{property}'
  */
         destroyForm.delete = (args: { property: string | number } | [property: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -607,7 +607,7 @@ destroy.delete = (args: { property: string | number } | [property: string | numb
     destroy.form = destroyForm
 /**
 * @see \App\Http\Controllers\PropertiesController::approve
- * @see app/Http/Controllers/PropertiesController.php:149
+ * @see app/Http/Controllers/PropertiesController.php:152
  * @route '/properties/approve/{id}'
  */
 export const approve = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -622,7 +622,7 @@ approve.definition = {
 
 /**
 * @see \App\Http\Controllers\PropertiesController::approve
- * @see app/Http/Controllers/PropertiesController.php:149
+ * @see app/Http/Controllers/PropertiesController.php:152
  * @route '/properties/approve/{id}'
  */
 approve.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -650,7 +650,7 @@ approve.url = (args: { id: string | number } | [id: string | number ] | string |
 
 /**
 * @see \App\Http\Controllers\PropertiesController::approve
- * @see app/Http/Controllers/PropertiesController.php:149
+ * @see app/Http/Controllers/PropertiesController.php:152
  * @route '/properties/approve/{id}'
  */
 approve.get = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -659,7 +659,7 @@ approve.get = (args: { id: string | number } | [id: string | number ] | string |
 })
 /**
 * @see \App\Http\Controllers\PropertiesController::approve
- * @see app/Http/Controllers/PropertiesController.php:149
+ * @see app/Http/Controllers/PropertiesController.php:152
  * @route '/properties/approve/{id}'
  */
 approve.head = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -669,7 +669,7 @@ approve.head = (args: { id: string | number } | [id: string | number ] | string 
 
     /**
 * @see \App\Http\Controllers\PropertiesController::approve
- * @see app/Http/Controllers/PropertiesController.php:149
+ * @see app/Http/Controllers/PropertiesController.php:152
  * @route '/properties/approve/{id}'
  */
     const approveForm = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -679,7 +679,7 @@ approve.head = (args: { id: string | number } | [id: string | number ] | string 
 
             /**
 * @see \App\Http\Controllers\PropertiesController::approve
- * @see app/Http/Controllers/PropertiesController.php:149
+ * @see app/Http/Controllers/PropertiesController.php:152
  * @route '/properties/approve/{id}'
  */
         approveForm.get = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -688,7 +688,7 @@ approve.head = (args: { id: string | number } | [id: string | number ] | string 
         })
             /**
 * @see \App\Http\Controllers\PropertiesController::approve
- * @see app/Http/Controllers/PropertiesController.php:149
+ * @see app/Http/Controllers/PropertiesController.php:152
  * @route '/properties/approve/{id}'
  */
         approveForm.head = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -704,7 +704,7 @@ approve.head = (args: { id: string | number } | [id: string | number ] | string 
     approve.form = approveForm
 /**
 * @see \App\Http\Controllers\PropertiesController::cancel
- * @see app/Http/Controllers/PropertiesController.php:159
+ * @see app/Http/Controllers/PropertiesController.php:162
  * @route '/properties/cancel/{id}'
  */
 export const cancel = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -719,7 +719,7 @@ cancel.definition = {
 
 /**
 * @see \App\Http\Controllers\PropertiesController::cancel
- * @see app/Http/Controllers/PropertiesController.php:159
+ * @see app/Http/Controllers/PropertiesController.php:162
  * @route '/properties/cancel/{id}'
  */
 cancel.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -747,7 +747,7 @@ cancel.url = (args: { id: string | number } | [id: string | number ] | string | 
 
 /**
 * @see \App\Http\Controllers\PropertiesController::cancel
- * @see app/Http/Controllers/PropertiesController.php:159
+ * @see app/Http/Controllers/PropertiesController.php:162
  * @route '/properties/cancel/{id}'
  */
 cancel.get = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -756,7 +756,7 @@ cancel.get = (args: { id: string | number } | [id: string | number ] | string | 
 })
 /**
 * @see \App\Http\Controllers\PropertiesController::cancel
- * @see app/Http/Controllers/PropertiesController.php:159
+ * @see app/Http/Controllers/PropertiesController.php:162
  * @route '/properties/cancel/{id}'
  */
 cancel.head = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -766,7 +766,7 @@ cancel.head = (args: { id: string | number } | [id: string | number ] | string |
 
     /**
 * @see \App\Http\Controllers\PropertiesController::cancel
- * @see app/Http/Controllers/PropertiesController.php:159
+ * @see app/Http/Controllers/PropertiesController.php:162
  * @route '/properties/cancel/{id}'
  */
     const cancelForm = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -776,7 +776,7 @@ cancel.head = (args: { id: string | number } | [id: string | number ] | string |
 
             /**
 * @see \App\Http\Controllers\PropertiesController::cancel
- * @see app/Http/Controllers/PropertiesController.php:159
+ * @see app/Http/Controllers/PropertiesController.php:162
  * @route '/properties/cancel/{id}'
  */
         cancelForm.get = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -785,7 +785,7 @@ cancel.head = (args: { id: string | number } | [id: string | number ] | string |
         })
             /**
 * @see \App\Http\Controllers\PropertiesController::cancel
- * @see app/Http/Controllers/PropertiesController.php:159
+ * @see app/Http/Controllers/PropertiesController.php:162
  * @route '/properties/cancel/{id}'
  */
         cancelForm.head = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({

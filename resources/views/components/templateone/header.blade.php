@@ -17,6 +17,7 @@
       <title>{{ config('app.name') }} - {{ $settings->slogan }} </title>
       <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
 
+      <script src="https://www.w3schools.com/lib/w3.js"></script>
       
    </head>
 

@@ -119,36 +119,70 @@
                   Do you have any <br class="hidden xl:block" />
                   question?
                </h2>
-               <form action="#" class="gap-30 flex w-full flex-col">
+                 @if (session('success'))
+                        <div class="bg-green-100 text-green-700 w3-full p-4 rounded mb-4">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+               <form action="/send" method="post" class="gap-30 flex w-full flex-col">
+                  @csrf
                   <div class="gap-30 grid grid-cols-2">
+                     <div>
                      <input
                         type="text"
                         placeholder="Your Name"
-                        class="rounded-[20px] bg-new-100 focus:border-secondary focus:ring-secondary"
+                        name="name"
+                        class="rounded-[20px] bg-new-100 focus:border-secondary focus:ring-secondary @error('name') is-invalid @enderror"
                      />
+                      @error('name')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                     @enderror
+                     </div>
+                     <div>
                      <input
-                        type="text"
+                        type="email"
+                        name="email"
                         placeholder="Your E-mail"
-                        class="rounded-[20px] bg-new-100 focus:border-secondary focus:ring-secondary"
+                        class="rounded-[20px] bg-new-100 focus:border-secondary focus:ring-secondary @error('email') is-invalid @enderror"
                      />
+                        @error('email')
+                           <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
+                     </div>
                   </div>
                   <div class="gap-30 grid grid-cols-2">
+                     <div>
                      <input
                         type="text"
+                        name="phone"
                         placeholder="Phone Number"
-                        class="rounded-[20px] bg-new-100 focus:border-secondary focus:ring-secondary"
+                        class="rounded-[20px] bg-new-100 focus:border-secondary focus:ring-secondary @error('phone') is-invalid @enderror"
                      />
+                     @error('phone')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                     @enderror
+                     </div>
+                     <div>
                      <input
                         type="text"
+                        name="subject"
                         placeholder="Subject"
-                        class="rounded-[20px] bg-new-100 focus:border-secondary focus:ring-secondary"
+                        class="rounded-[20px] bg-new-100 focus:border-secondary focus:ring-secondary @error('subject') is-invalid @enderror"
                      />
+                     @error('subject')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                     @enderror
+                     </div>
                   </div>
                   <div class="w-full">
                      <textarea
                         placeholder="Your Message"
-                        class="h-[130px] rounded-[20px] bg-new-100 focus:border-secondary focus:ring-secondary"
+                        name="message"
+                        class="h-[130px] rounded-[20px] bg-new-100 focus:border-secondary focus:ring-secondary @error('message') is-invalid @enderror"
                      ></textarea>
+                     @error('message')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                     @enderror
                   </div>
                   <button
                      class="mx-auto size-fit rounded-full bg-secondary px-[30px] py-2.5 text-center font-poppins text-lg font-medium text-white"

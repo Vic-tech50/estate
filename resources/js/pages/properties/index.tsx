@@ -108,6 +108,7 @@ export default function Properties() {
                                                 </TableCell>
 
                                                 <TableCell>
+                                                    {property.currency}
                                                     {property.price}
                                                 </TableCell>
 
@@ -158,10 +159,12 @@ export default function Properties() {
                                                                 </Link>
                                                             </DropdownMenuItem>
                                                             <DropdownMenuItem>
-                                                                <Link  href={route(
+                                                                <Link
+                                                                    href={route(
                                                                         'properties.edit',
                                                                         property.id,
-                                                                    )}>
+                                                                    )}
+                                                                >
                                                                     Edit
                                                                 </Link>
                                                             </DropdownMenuItem>

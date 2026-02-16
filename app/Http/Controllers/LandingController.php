@@ -12,6 +12,7 @@ use App\Notifications\ContactMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 
@@ -52,7 +53,7 @@ class LandingController extends Controller
 
     public function contact()
     {
-
+        // Alert::success('Success Title', 'Success Message');
         return view('templateone.contact');
     }
 
@@ -61,13 +62,19 @@ class LandingController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'phone' => 'required|numeric|max:12',
+            'phone' => 'required|string|max:15',
             'subject' => 'nullable|string|max:255',
             'message' => 'required|string',
         ]);
 
         Notification::route('mail', 'vick@gmail.com')
-            ->notify(new ContactMessage($validated['name'], $validated['email'], $validated['phone'], $validated['subject'], $validated['message']));
+            ->notify(new ContactMessage(
+                $validated['name'],
+                $validated['email'],
+                $validated['phone'],
+                $validated['subject'] ?? 'New Contact Message',
+                $validated['message']
+            ));
 
         return back()->with('success', 'Your message has been sent successfully!');
     }

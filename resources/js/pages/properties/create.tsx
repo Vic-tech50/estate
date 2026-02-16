@@ -1206,8 +1206,8 @@ export default function AddProperty() {
 
                             {/* Property Details */}
                             <h2>Property Details :</h2>
-                            <div className="mt-8 grid gap-6 md:grid-cols-3">
-                                <div className="grid w-full items-center gap-3">
+                            <div className="mt-8 grid gap-6 md:grid-cols-2">
+                                {/* <div className="grid w-full items-center gap-3">
                                     <Label htmlFor="property_id">
                                         Property ID
                                     </Label>
@@ -1229,7 +1229,7 @@ export default function AddProperty() {
                                             {errors.propertyId}
                                         </div>
                                     )}
-                                </div>
+                                </div> */}
 
                                 <div className="grid w-full items-center gap-3">
                                     <Label htmlFor="bedrooms">

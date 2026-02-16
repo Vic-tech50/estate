@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../../../wayfinder'
 /**
 * @see \App\Http\Controllers\LandingController::index
- * @see app/Http/Controllers/LandingController.php:21
+ * @see app/Http/Controllers/LandingController.php:22
  * @route '/'
  */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ index.definition = {
 
 /**
 * @see \App\Http\Controllers\LandingController::index
- * @see app/Http/Controllers/LandingController.php:21
+ * @see app/Http/Controllers/LandingController.php:22
  * @route '/'
  */
 index.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ index.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\LandingController::index
- * @see app/Http/Controllers/LandingController.php:21
+ * @see app/Http/Controllers/LandingController.php:22
  * @route '/'
  */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -34,7 +34,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\LandingController::index
- * @see app/Http/Controllers/LandingController.php:21
+ * @see app/Http/Controllers/LandingController.php:22
  * @route '/'
  */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -44,7 +44,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\LandingController::index
- * @see app/Http/Controllers/LandingController.php:21
+ * @see app/Http/Controllers/LandingController.php:22
  * @route '/'
  */
     const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -54,7 +54,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\LandingController::index
- * @see app/Http/Controllers/LandingController.php:21
+ * @see app/Http/Controllers/LandingController.php:22
  * @route '/'
  */
         indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -63,7 +63,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\LandingController::index
- * @see app/Http/Controllers/LandingController.php:21
+ * @see app/Http/Controllers/LandingController.php:22
  * @route '/'
  */
         indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -79,7 +79,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     index.form = indexForm
 /**
 * @see \App\Http\Controllers\LandingController::faqs
- * @see app/Http/Controllers/LandingController.php:47
+ * @see app/Http/Controllers/LandingController.php:48
  * @route '/faqs'
  */
 export const faqs = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -94,7 +94,7 @@ faqs.definition = {
 
 /**
 * @see \App\Http\Controllers\LandingController::faqs
- * @see app/Http/Controllers/LandingController.php:47
+ * @see app/Http/Controllers/LandingController.php:48
  * @route '/faqs'
  */
 faqs.url = (options?: RouteQueryOptions) => {
@@ -103,7 +103,7 @@ faqs.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\LandingController::faqs
- * @see app/Http/Controllers/LandingController.php:47
+ * @see app/Http/Controllers/LandingController.php:48
  * @route '/faqs'
  */
 faqs.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -112,7 +112,7 @@ faqs.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\LandingController::faqs
- * @see app/Http/Controllers/LandingController.php:47
+ * @see app/Http/Controllers/LandingController.php:48
  * @route '/faqs'
  */
 faqs.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -122,7 +122,7 @@ faqs.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\LandingController::faqs
- * @see app/Http/Controllers/LandingController.php:47
+ * @see app/Http/Controllers/LandingController.php:48
  * @route '/faqs'
  */
     const faqsForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -132,7 +132,7 @@ faqs.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\LandingController::faqs
- * @see app/Http/Controllers/LandingController.php:47
+ * @see app/Http/Controllers/LandingController.php:48
  * @route '/faqs'
  */
         faqsForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -141,7 +141,7 @@ faqs.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\LandingController::faqs
- * @see app/Http/Controllers/LandingController.php:47
+ * @see app/Http/Controllers/LandingController.php:48
  * @route '/faqs'
  */
         faqsForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -157,7 +157,7 @@ faqs.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     faqs.form = faqsForm
 /**
 * @see \App\Http\Controllers\LandingController::contact
- * @see app/Http/Controllers/LandingController.php:53
+ * @see app/Http/Controllers/LandingController.php:54
  * @route '/contact'
  */
 export const contact = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -172,7 +172,7 @@ contact.definition = {
 
 /**
 * @see \App\Http\Controllers\LandingController::contact
- * @see app/Http/Controllers/LandingController.php:53
+ * @see app/Http/Controllers/LandingController.php:54
  * @route '/contact'
  */
 contact.url = (options?: RouteQueryOptions) => {
@@ -181,7 +181,7 @@ contact.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\LandingController::contact
- * @see app/Http/Controllers/LandingController.php:53
+ * @see app/Http/Controllers/LandingController.php:54
  * @route '/contact'
  */
 contact.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -190,7 +190,7 @@ contact.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\LandingController::contact
- * @see app/Http/Controllers/LandingController.php:53
+ * @see app/Http/Controllers/LandingController.php:54
  * @route '/contact'
  */
 contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -200,7 +200,7 @@ contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\LandingController::contact
- * @see app/Http/Controllers/LandingController.php:53
+ * @see app/Http/Controllers/LandingController.php:54
  * @route '/contact'
  */
     const contactForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -210,7 +210,7 @@ contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\LandingController::contact
- * @see app/Http/Controllers/LandingController.php:53
+ * @see app/Http/Controllers/LandingController.php:54
  * @route '/contact'
  */
         contactForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -219,7 +219,7 @@ contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\LandingController::contact
- * @see app/Http/Controllers/LandingController.php:53
+ * @see app/Http/Controllers/LandingController.php:54
  * @route '/contact'
  */
         contactForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -235,8 +235,8 @@ contact.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     contact.form = contactForm
 /**
 * @see \App\Http\Controllers\LandingController::sendContact
- * @see app/Http/Controllers/LandingController.php:59
- * @route '/sendcontact'
+ * @see app/Http/Controllers/LandingController.php:60
+ * @route '/send'
  */
 export const sendContact = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: sendContact.url(options),
@@ -245,13 +245,13 @@ export const sendContact = (options?: RouteQueryOptions): RouteDefinition<'post'
 
 sendContact.definition = {
     methods: ["post"],
-    url: '/sendcontact',
+    url: '/send',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \App\Http\Controllers\LandingController::sendContact
- * @see app/Http/Controllers/LandingController.php:59
- * @route '/sendcontact'
+ * @see app/Http/Controllers/LandingController.php:60
+ * @route '/send'
  */
 sendContact.url = (options?: RouteQueryOptions) => {
     return sendContact.definition.url + queryParams(options)
@@ -259,8 +259,8 @@ sendContact.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\LandingController::sendContact
- * @see app/Http/Controllers/LandingController.php:59
- * @route '/sendcontact'
+ * @see app/Http/Controllers/LandingController.php:60
+ * @route '/send'
  */
 sendContact.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: sendContact.url(options),
@@ -269,8 +269,8 @@ sendContact.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
     /**
 * @see \App\Http\Controllers\LandingController::sendContact
- * @see app/Http/Controllers/LandingController.php:59
- * @route '/sendcontact'
+ * @see app/Http/Controllers/LandingController.php:60
+ * @route '/send'
  */
     const sendContactForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: sendContact.url(options),
@@ -279,8 +279,8 @@ sendContact.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
             /**
 * @see \App\Http\Controllers\LandingController::sendContact
- * @see app/Http/Controllers/LandingController.php:59
- * @route '/sendcontact'
+ * @see app/Http/Controllers/LandingController.php:60
+ * @route '/send'
  */
         sendContactForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: sendContact.url(options),
@@ -290,7 +290,7 @@ sendContact.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     sendContact.form = sendContactForm
 /**
 * @see \App\Http\Controllers\LandingController::blog
- * @see app/Http/Controllers/LandingController.php:94
+ * @see app/Http/Controllers/LandingController.php:101
  * @route '/blogs'
  */
 export const blog = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -305,7 +305,7 @@ blog.definition = {
 
 /**
 * @see \App\Http\Controllers\LandingController::blog
- * @see app/Http/Controllers/LandingController.php:94
+ * @see app/Http/Controllers/LandingController.php:101
  * @route '/blogs'
  */
 blog.url = (options?: RouteQueryOptions) => {
@@ -314,7 +314,7 @@ blog.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\LandingController::blog
- * @see app/Http/Controllers/LandingController.php:94
+ * @see app/Http/Controllers/LandingController.php:101
  * @route '/blogs'
  */
 blog.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -323,7 +323,7 @@ blog.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\LandingController::blog
- * @see app/Http/Controllers/LandingController.php:94
+ * @see app/Http/Controllers/LandingController.php:101
  * @route '/blogs'
  */
 blog.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -333,7 +333,7 @@ blog.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\LandingController::blog
- * @see app/Http/Controllers/LandingController.php:94
+ * @see app/Http/Controllers/LandingController.php:101
  * @route '/blogs'
  */
     const blogForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -343,7 +343,7 @@ blog.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\LandingController::blog
- * @see app/Http/Controllers/LandingController.php:94
+ * @see app/Http/Controllers/LandingController.php:101
  * @route '/blogs'
  */
         blogForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -352,7 +352,7 @@ blog.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\LandingController::blog
- * @see app/Http/Controllers/LandingController.php:94
+ * @see app/Http/Controllers/LandingController.php:101
  * @route '/blogs'
  */
         blogForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -368,7 +368,7 @@ blog.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     blog.form = blogForm
 /**
 * @see \App\Http\Controllers\LandingController::property
- * @see app/Http/Controllers/LandingController.php:126
+ * @see app/Http/Controllers/LandingController.php:133
  * @route '/property'
  */
 export const property = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -383,7 +383,7 @@ property.definition = {
 
 /**
 * @see \App\Http\Controllers\LandingController::property
- * @see app/Http/Controllers/LandingController.php:126
+ * @see app/Http/Controllers/LandingController.php:133
  * @route '/property'
  */
 property.url = (options?: RouteQueryOptions) => {
@@ -392,7 +392,7 @@ property.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\LandingController::property
- * @see app/Http/Controllers/LandingController.php:126
+ * @see app/Http/Controllers/LandingController.php:133
  * @route '/property'
  */
 property.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -401,7 +401,7 @@ property.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\LandingController::property
- * @see app/Http/Controllers/LandingController.php:126
+ * @see app/Http/Controllers/LandingController.php:133
  * @route '/property'
  */
 property.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -411,7 +411,7 @@ property.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\LandingController::property
- * @see app/Http/Controllers/LandingController.php:126
+ * @see app/Http/Controllers/LandingController.php:133
  * @route '/property'
  */
     const propertyForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -421,7 +421,7 @@ property.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\LandingController::property
- * @see app/Http/Controllers/LandingController.php:126
+ * @see app/Http/Controllers/LandingController.php:133
  * @route '/property'
  */
         propertyForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -430,7 +430,7 @@ property.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\LandingController::property
- * @see app/Http/Controllers/LandingController.php:126
+ * @see app/Http/Controllers/LandingController.php:133
  * @route '/property'
  */
         propertyForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -446,7 +446,7 @@ property.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     property.form = propertyForm
 /**
 * @see \App\Http\Controllers\LandingController::disclaimer
- * @see app/Http/Controllers/LandingController.php:75
+ * @see app/Http/Controllers/LandingController.php:82
  * @route '/disclaimer'
  */
 export const disclaimer = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -461,7 +461,7 @@ disclaimer.definition = {
 
 /**
 * @see \App\Http\Controllers\LandingController::disclaimer
- * @see app/Http/Controllers/LandingController.php:75
+ * @see app/Http/Controllers/LandingController.php:82
  * @route '/disclaimer'
  */
 disclaimer.url = (options?: RouteQueryOptions) => {
@@ -470,7 +470,7 @@ disclaimer.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\LandingController::disclaimer
- * @see app/Http/Controllers/LandingController.php:75
+ * @see app/Http/Controllers/LandingController.php:82
  * @route '/disclaimer'
  */
 disclaimer.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -479,7 +479,7 @@ disclaimer.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\LandingController::disclaimer
- * @see app/Http/Controllers/LandingController.php:75
+ * @see app/Http/Controllers/LandingController.php:82
  * @route '/disclaimer'
  */
 disclaimer.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -489,7 +489,7 @@ disclaimer.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\LandingController::disclaimer
- * @see app/Http/Controllers/LandingController.php:75
+ * @see app/Http/Controllers/LandingController.php:82
  * @route '/disclaimer'
  */
     const disclaimerForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -499,7 +499,7 @@ disclaimer.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\LandingController::disclaimer
- * @see app/Http/Controllers/LandingController.php:75
+ * @see app/Http/Controllers/LandingController.php:82
  * @route '/disclaimer'
  */
         disclaimerForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -508,7 +508,7 @@ disclaimer.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\LandingController::disclaimer
- * @see app/Http/Controllers/LandingController.php:75
+ * @see app/Http/Controllers/LandingController.php:82
  * @route '/disclaimer'
  */
         disclaimerForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -524,7 +524,7 @@ disclaimer.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     disclaimer.form = disclaimerForm
 /**
 * @see \App\Http\Controllers\LandingController::terms
- * @see app/Http/Controllers/LandingController.php:81
+ * @see app/Http/Controllers/LandingController.php:88
  * @route '/terms'
  */
 export const terms = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -539,7 +539,7 @@ terms.definition = {
 
 /**
 * @see \App\Http\Controllers\LandingController::terms
- * @see app/Http/Controllers/LandingController.php:81
+ * @see app/Http/Controllers/LandingController.php:88
  * @route '/terms'
  */
 terms.url = (options?: RouteQueryOptions) => {
@@ -548,7 +548,7 @@ terms.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\LandingController::terms
- * @see app/Http/Controllers/LandingController.php:81
+ * @see app/Http/Controllers/LandingController.php:88
  * @route '/terms'
  */
 terms.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -557,7 +557,7 @@ terms.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\LandingController::terms
- * @see app/Http/Controllers/LandingController.php:81
+ * @see app/Http/Controllers/LandingController.php:88
  * @route '/terms'
  */
 terms.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -567,7 +567,7 @@ terms.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\LandingController::terms
- * @see app/Http/Controllers/LandingController.php:81
+ * @see app/Http/Controllers/LandingController.php:88
  * @route '/terms'
  */
     const termsForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -577,7 +577,7 @@ terms.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\LandingController::terms
- * @see app/Http/Controllers/LandingController.php:81
+ * @see app/Http/Controllers/LandingController.php:88
  * @route '/terms'
  */
         termsForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -586,7 +586,7 @@ terms.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\LandingController::terms
- * @see app/Http/Controllers/LandingController.php:81
+ * @see app/Http/Controllers/LandingController.php:88
  * @route '/terms'
  */
         termsForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -602,7 +602,7 @@ terms.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     terms.form = termsForm
 /**
 * @see \App\Http\Controllers\LandingController::privacy
- * @see app/Http/Controllers/LandingController.php:87
+ * @see app/Http/Controllers/LandingController.php:94
  * @route '/privacy'
  */
 export const privacy = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -617,7 +617,7 @@ privacy.definition = {
 
 /**
 * @see \App\Http\Controllers\LandingController::privacy
- * @see app/Http/Controllers/LandingController.php:87
+ * @see app/Http/Controllers/LandingController.php:94
  * @route '/privacy'
  */
 privacy.url = (options?: RouteQueryOptions) => {
@@ -626,7 +626,7 @@ privacy.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\LandingController::privacy
- * @see app/Http/Controllers/LandingController.php:87
+ * @see app/Http/Controllers/LandingController.php:94
  * @route '/privacy'
  */
 privacy.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -635,7 +635,7 @@ privacy.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\LandingController::privacy
- * @see app/Http/Controllers/LandingController.php:87
+ * @see app/Http/Controllers/LandingController.php:94
  * @route '/privacy'
  */
 privacy.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -645,7 +645,7 @@ privacy.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\LandingController::privacy
- * @see app/Http/Controllers/LandingController.php:87
+ * @see app/Http/Controllers/LandingController.php:94
  * @route '/privacy'
  */
     const privacyForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -655,7 +655,7 @@ privacy.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\LandingController::privacy
- * @see app/Http/Controllers/LandingController.php:87
+ * @see app/Http/Controllers/LandingController.php:94
  * @route '/privacy'
  */
         privacyForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -664,7 +664,7 @@ privacy.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\LandingController::privacy
- * @see app/Http/Controllers/LandingController.php:87
+ * @see app/Http/Controllers/LandingController.php:94
  * @route '/privacy'
  */
         privacyForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -680,7 +680,7 @@ privacy.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     privacy.form = privacyForm
 /**
 * @see \App\Http\Controllers\LandingController::property_detail
- * @see app/Http/Controllers/LandingController.php:132
+ * @see app/Http/Controllers/LandingController.php:139
  * @route '/property_details/{property}'
  */
 export const property_detail = (args: { property: string | { title: string } } | [property: string | { title: string } ] | string | { title: string }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -695,7 +695,7 @@ property_detail.definition = {
 
 /**
 * @see \App\Http\Controllers\LandingController::property_detail
- * @see app/Http/Controllers/LandingController.php:132
+ * @see app/Http/Controllers/LandingController.php:139
  * @route '/property_details/{property}'
  */
 property_detail.url = (args: { property: string | { title: string } } | [property: string | { title: string } ] | string | { title: string }, options?: RouteQueryOptions) => {
@@ -728,7 +728,7 @@ property_detail.url = (args: { property: string | { title: string } } | [propert
 
 /**
 * @see \App\Http\Controllers\LandingController::property_detail
- * @see app/Http/Controllers/LandingController.php:132
+ * @see app/Http/Controllers/LandingController.php:139
  * @route '/property_details/{property}'
  */
 property_detail.get = (args: { property: string | { title: string } } | [property: string | { title: string } ] | string | { title: string }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -737,7 +737,7 @@ property_detail.get = (args: { property: string | { title: string } } | [propert
 })
 /**
 * @see \App\Http\Controllers\LandingController::property_detail
- * @see app/Http/Controllers/LandingController.php:132
+ * @see app/Http/Controllers/LandingController.php:139
  * @route '/property_details/{property}'
  */
 property_detail.head = (args: { property: string | { title: string } } | [property: string | { title: string } ] | string | { title: string }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -747,7 +747,7 @@ property_detail.head = (args: { property: string | { title: string } } | [proper
 
     /**
 * @see \App\Http\Controllers\LandingController::property_detail
- * @see app/Http/Controllers/LandingController.php:132
+ * @see app/Http/Controllers/LandingController.php:139
  * @route '/property_details/{property}'
  */
     const property_detailForm = (args: { property: string | { title: string } } | [property: string | { title: string } ] | string | { title: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -757,7 +757,7 @@ property_detail.head = (args: { property: string | { title: string } } | [proper
 
             /**
 * @see \App\Http\Controllers\LandingController::property_detail
- * @see app/Http/Controllers/LandingController.php:132
+ * @see app/Http/Controllers/LandingController.php:139
  * @route '/property_details/{property}'
  */
         property_detailForm.get = (args: { property: string | { title: string } } | [property: string | { title: string } ] | string | { title: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -766,7 +766,7 @@ property_detail.head = (args: { property: string | { title: string } } | [proper
         })
             /**
 * @see \App\Http\Controllers\LandingController::property_detail
- * @see app/Http/Controllers/LandingController.php:132
+ * @see app/Http/Controllers/LandingController.php:139
  * @route '/property_details/{property}'
  */
         property_detailForm.head = (args: { property: string | { title: string } } | [property: string | { title: string } ] | string | { title: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -782,7 +782,7 @@ property_detail.head = (args: { property: string | { title: string } } | [proper
     property_detail.form = property_detailForm
 /**
 * @see \App\Http\Controllers\LandingController::blog_detail
- * @see app/Http/Controllers/LandingController.php:106
+ * @see app/Http/Controllers/LandingController.php:113
  * @route '/blog_details/{blog}'
  */
 export const blog_detail = (args: { blog: string | { slug: string } } | [blog: string | { slug: string } ] | string | { slug: string }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -797,7 +797,7 @@ blog_detail.definition = {
 
 /**
 * @see \App\Http\Controllers\LandingController::blog_detail
- * @see app/Http/Controllers/LandingController.php:106
+ * @see app/Http/Controllers/LandingController.php:113
  * @route '/blog_details/{blog}'
  */
 blog_detail.url = (args: { blog: string | { slug: string } } | [blog: string | { slug: string } ] | string | { slug: string }, options?: RouteQueryOptions) => {
@@ -830,7 +830,7 @@ blog_detail.url = (args: { blog: string | { slug: string } } | [blog: string | {
 
 /**
 * @see \App\Http\Controllers\LandingController::blog_detail
- * @see app/Http/Controllers/LandingController.php:106
+ * @see app/Http/Controllers/LandingController.php:113
  * @route '/blog_details/{blog}'
  */
 blog_detail.get = (args: { blog: string | { slug: string } } | [blog: string | { slug: string } ] | string | { slug: string }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -839,7 +839,7 @@ blog_detail.get = (args: { blog: string | { slug: string } } | [blog: string | {
 })
 /**
 * @see \App\Http\Controllers\LandingController::blog_detail
- * @see app/Http/Controllers/LandingController.php:106
+ * @see app/Http/Controllers/LandingController.php:113
  * @route '/blog_details/{blog}'
  */
 blog_detail.head = (args: { blog: string | { slug: string } } | [blog: string | { slug: string } ] | string | { slug: string }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -849,7 +849,7 @@ blog_detail.head = (args: { blog: string | { slug: string } } | [blog: string | 
 
     /**
 * @see \App\Http\Controllers\LandingController::blog_detail
- * @see app/Http/Controllers/LandingController.php:106
+ * @see app/Http/Controllers/LandingController.php:113
  * @route '/blog_details/{blog}'
  */
     const blog_detailForm = (args: { blog: string | { slug: string } } | [blog: string | { slug: string } ] | string | { slug: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -859,7 +859,7 @@ blog_detail.head = (args: { blog: string | { slug: string } } | [blog: string | 
 
             /**
 * @see \App\Http\Controllers\LandingController::blog_detail
- * @see app/Http/Controllers/LandingController.php:106
+ * @see app/Http/Controllers/LandingController.php:113
  * @route '/blog_details/{blog}'
  */
         blog_detailForm.get = (args: { blog: string | { slug: string } } | [blog: string | { slug: string } ] | string | { slug: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -868,7 +868,7 @@ blog_detail.head = (args: { blog: string | { slug: string } } | [blog: string | 
         })
             /**
 * @see \App\Http\Controllers\LandingController::blog_detail
- * @see app/Http/Controllers/LandingController.php:106
+ * @see app/Http/Controllers/LandingController.php:113
  * @route '/blog_details/{blog}'
  */
         blog_detailForm.head = (args: { blog: string | { slug: string } } | [blog: string | { slug: string } ] | string | { slug: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({

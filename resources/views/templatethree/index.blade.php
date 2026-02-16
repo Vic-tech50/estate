@@ -260,8 +260,8 @@
                </div>
                <h4>Buy a home</h4>
                <p>
-                  Real estate is a lucrative ind involves the is a buying selli
-                  ng and reproperties Real
+                  Find your perfect home with ease and confidence.
+Explore quality properties designed to match your lifestyle and budget.
                </p>
                <a href="/property">
                   <span>See More</span
@@ -283,8 +283,8 @@
                </div>
                <h4>Rent a home</h4>
                <p>
-                  Real estate is a lucrative ind involves the is a buying selli
-                  ng and reproperties Real
+                 Rent a home that fits your lifestyle and comfort.
+Discover affordable, well-located properties ready for you to move in.
                </p>
                <a href="/property">
                   <span>See More</span
@@ -307,8 +307,8 @@
                </div>
                <h4>Sell property</h4>
                <p>
-                  Real estate is a lucrative ind involves the is a buying selli
-                  ng and reproperties Real
+                  Sell your property quickly and at the right value.
+Connect with serious buyers and enjoy a smooth, stress-free selling process.
                </p>
                <a href="/register">
                   <span>See More</span
@@ -460,8 +460,7 @@
                <p
                   class="mt-3 font-poppins text-sm text-new-800 md:mt-4 md:text-base lg:mt-5 lg:text-lg"
                >
-                  Find a home or space from our search bar. Enter your specific
-                  location, property tupe space from
+                  Search for homes or spaces with ease. Enter your preferred location, property type, or space to find the perfect match.
                </p>
             </div>
 
@@ -473,19 +472,18 @@
                      class="size-5 sm:size-6 md:size-7 lg:size-8"
                   />
                   <h4 class="text-xl font-medium text-new-900 lg:text-2xl">
-                     Find excellent deals
+                     Find exceptional opportunities
                   </h4>
                </div>
                <p
                   class="mt-3 font-poppins text-sm text-new-800 md:mt-4 md:text-base lg:mt-5 lg:text-lg"
                >
-                  Find a home or space from our search bar. Enter your specific
-                  location, property tupe space from
+                  Search homes and spaces by location, property type, or preference.
                </p>
             </div>
 
             <a
-               href="#"
+               href="/property"
                class="btn btn-secondary btn-rounded flex items-center gap-x-2.5"
                ><span>See More</span><i class="fa-solid fa-arrow-right"></i
             ></a>
@@ -615,9 +613,8 @@
                data-aos-delay="150"
                class="heading-tagline"
             >
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-               eiusmod tempor incididunt ut <br />
-               labore et dolore magna aliqua. Ut enim ad minim veniam.
+               Connect with skilled professionals who understand your needs and are committed to <br />
+               making your real estate journey smooth and successful.
             </p>
 
             <div class="h2-agent-swiper container overflow-hidden">
@@ -718,9 +715,8 @@
       <section
          class="section-padding container flex flex-col items-center justify-center overflow-hidden px-3 2xl:px-0"
       >
-        <x-heading load=" Articles & Travel Guiding" title="Travel has helped us to understand the meaning of life and it has
-            helped us <br />
-            become better people."
+        <x-heading load=" Blog" title="Explore ideas, trends, and expert advice on <br />
+          real estate, homes, and modern living."
                />
         
 

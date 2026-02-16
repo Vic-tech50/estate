@@ -564,7 +564,7 @@
       </div>
       <!-- Splitted code ended -->
 
-      @include('sweetalert::alert')
+  
 
       <!-- Footer Section End -->
       <script src="{{ asset('js/fontawesome.min.js') }}"></script>
@@ -575,6 +575,7 @@
       <script src="{{ asset('js/index.js') }}"></script>
       <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 
+          @include('sweetalert::alert')
       <script>
          AOS.init({
             delay: 0,

@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "framework": "none",
+  
 
   "functions": {
-    "api/index.php": { "runtime": "vercel-php@0.6.0" }
+    "api/index.php": { "runtime": "vercel-php@0.7.4" }
   },
 
   "routes": [
@@ -29,7 +29,6 @@
     "LOG_CHANNEL": "stderr",
     "SESSION_DRIVER": "cookie"
   },
+"buildCommand": "npm install && npm run build"
 
-  "buildCommand": "composer install --no-dev --optimize-autoloader && php artisan vendor:publish --tag=laravel-assets && npm install && npm run build",
-  "outputDirectory": "public"
 }

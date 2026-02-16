@@ -20,6 +20,7 @@ use App\Http\Controllers\SearchController;
 use Laravel\Socialite\Socialite;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+
 // Route::get('auth/google', [SocialController::class, 'redirectToGoogle'])->name('google.redirect');
 // Route::get('auth/google/callback', [SocialController::class, 'handleGoogleCallback'])->name('google.callback');
 
@@ -57,7 +58,7 @@ Route::controller(LandingController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/faqs', 'faqs');
     Route::get('/contact', 'contact');
-    Route::post('/sendcontact', 'sendContact');
+    Route::post('/send', 'sendContact');
     Route::get('/blogs', 'blog');
     Route::get('/property', 'property');
     Route::get('/disclaimer', 'disclaimer');

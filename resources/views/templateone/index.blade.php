@@ -1125,7 +1125,7 @@
                class="rounded-2xl bg-white p-7 pt-12 md:col-span-6"
             >
             
-            <form  action="/sendcontact" method="POST" class="grid w-full gap-2.5 md:gap-4 lg:gap-5 xl:gap-6"  >
+            <form  action="/send" method="POST" class="grid w-full gap-2.5 md:gap-4 lg:gap-5 xl:gap-6"  >
                   @csrf
                   <div class="w-full">
                      <label
@@ -1133,6 +1133,7 @@
                         class="mb-1.5 block font-poppins text-base font-medium text-nature-600 md:mb-2.5 lg:mb-3"
                         >Your Name</label
                      >
+                     <div>
                      <input
                         type="text"
                         placeholder="Enter your name"
@@ -1140,6 +1141,10 @@
                         name="name"
                         class="placeholder:font-poppins placeholder:text-sm placeholder:text-nature-50"
                      />
+                     @error('name')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                     @enderror
+                     </div>
                   </div>
 
                    <div class="w-full">
@@ -1148,13 +1153,20 @@
                         class="mb-1.5 block font-poppins text-base font-medium text-nature-600 md:mb-2.5 lg:mb-3"
                         >Subject</label
                      >
+                     <div>
                      <input
                         type="text"
                         placeholder="Enter your subject"
                         id="subject"
-                        name="name"
+                        name="subject"
                         class="placeholder:font-poppins placeholder:text-sm placeholder:text-nature-50"
                      />
+
+                     @error('subject')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                     @enderror
+                     </div>
+
                   </div>
 
                   <div
@@ -1166,6 +1178,7 @@
                            class="mb-1.5 block font-poppins text-base font-medium text-nature-600 md:mb-2.5 lg:mb-3"
                            >Email</label
                         >
+                        <div>
                         <input
                            type="email"
                            placeholder="Enter your email"
@@ -1173,6 +1186,10 @@
                            name="email"
                            class="placeholder:font-poppins placeholder:text-sm placeholder:text-nature-50"
                         />
+                        @error('email')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                     @enderror
+                     </div>
                      </div>
                      <div class="w-full">
                         <label
@@ -1180,6 +1197,7 @@
                            for="phone"
                            >Phone</label
                         >
+                        <div>
                         <input
                            id="phone"
                            type="text"
@@ -1187,6 +1205,10 @@
                            placeholder="Enter your phone"
                            class="placeholder:font-poppins placeholder:text-sm placeholder:text-nature-50"
                         />
+                        @error('phone')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                     @enderror
+                     </div>
                      </div>
                   </div>
 
@@ -1206,6 +1228,10 @@
                         rows="8"
                         class="max-h-36 placeholder:font-poppins placeholder:text-sm placeholder:text-nature-50 md:max-h-40 lg:max-h-48 xl:max-h-56"
                      ></textarea>
+                     @error('message')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                     @enderror
+                     </div>
                   </div>
 
                   <div>
