@@ -34,6 +34,14 @@ class User extends Authenticatable
         'twitter',
         'instagram',
         'passport',
+        'country',
+        'documenttype',
+        'documentnumber',
+        'expiry',
+        'frontimg',
+        'backimg',
+        'verified',
+        'fullname',
     ];
 
     /**

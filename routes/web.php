@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InboxController;
+use App\Http\Controllers\VerifyController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\NewsletterController;
@@ -97,6 +98,8 @@ Route::middleware(['auth', 'verified', 'user-access:agent'])->group(function () 
     Route::get('/agent/dashboard', [HomeController::class, 'agent'])->name('agent.dashboard');
 
     Route::get('/inbox', [InboxController::class, 'index']);
+    Route::get('/agent/verify', [VerifyController::class, 'index'])->name('agent.verify');
+    Route::post('/verify', [VerifyController::class, 'store'])->name('verify.store');
 });
 
 Route::middleware(['auth',  'user-access:admin'])->group(function () {

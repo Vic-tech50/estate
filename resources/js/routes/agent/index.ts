@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:34
+ * @see app/Http/Controllers/HomeController.php:37
  * @route '/agent/dashboard'
  */
 export const dashboard = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ dashboard.definition = {
 
 /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:34
+ * @see app/Http/Controllers/HomeController.php:37
  * @route '/agent/dashboard'
  */
 dashboard.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ dashboard.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:34
+ * @see app/Http/Controllers/HomeController.php:37
  * @route '/agent/dashboard'
  */
 dashboard.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -34,7 +34,7 @@ dashboard.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:34
+ * @see app/Http/Controllers/HomeController.php:37
  * @route '/agent/dashboard'
  */
 dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -44,7 +44,7 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:34
+ * @see app/Http/Controllers/HomeController.php:37
  * @route '/agent/dashboard'
  */
     const dashboardForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -54,7 +54,7 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:34
+ * @see app/Http/Controllers/HomeController.php:37
  * @route '/agent/dashboard'
  */
         dashboardForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -63,7 +63,7 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\HomeController::dashboard
- * @see app/Http/Controllers/HomeController.php:34
+ * @see app/Http/Controllers/HomeController.php:37
  * @route '/agent/dashboard'
  */
         dashboardForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -77,6 +77,84 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
     
     dashboard.form = dashboardForm
+/**
+* @see \App\Http\Controllers\VerifyController::verify
+ * @see app/Http/Controllers/VerifyController.php:15
+ * @route '/agent/verify'
+ */
+export const verify = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: verify.url(options),
+    method: 'get',
+})
+
+verify.definition = {
+    methods: ["get","head"],
+    url: '/agent/verify',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\VerifyController::verify
+ * @see app/Http/Controllers/VerifyController.php:15
+ * @route '/agent/verify'
+ */
+verify.url = (options?: RouteQueryOptions) => {
+    return verify.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\VerifyController::verify
+ * @see app/Http/Controllers/VerifyController.php:15
+ * @route '/agent/verify'
+ */
+verify.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: verify.url(options),
+    method: 'get',
+})
+/**
+* @see \App\Http\Controllers\VerifyController::verify
+ * @see app/Http/Controllers/VerifyController.php:15
+ * @route '/agent/verify'
+ */
+verify.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: verify.url(options),
+    method: 'head',
+})
+
+    /**
+* @see \App\Http\Controllers\VerifyController::verify
+ * @see app/Http/Controllers/VerifyController.php:15
+ * @route '/agent/verify'
+ */
+    const verifyForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: verify.url(options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\VerifyController::verify
+ * @see app/Http/Controllers/VerifyController.php:15
+ * @route '/agent/verify'
+ */
+        verifyForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: verify.url(options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\VerifyController::verify
+ * @see app/Http/Controllers/VerifyController.php:15
+ * @route '/agent/verify'
+ */
+        verifyForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: verify.url({
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    verify.form = verifyForm
 /**
 * @see \App\Http\Controllers\AgentController::block
  * @see app/Http/Controllers/AgentController.php:120
@@ -879,6 +957,7 @@ destroy.delete = (args: { agent: string | number } | [agent: string | number ] |
     destroy.form = destroyForm
 const agent = {
     dashboard: Object.assign(dashboard, dashboard),
+verify: Object.assign(verify, verify),
 block: Object.assign(block, block),
 unblock: Object.assign(unblock, unblock),
 index: Object.assign(index, index),

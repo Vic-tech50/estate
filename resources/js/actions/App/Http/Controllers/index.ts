@@ -7,6 +7,7 @@ import PropertiesController from './PropertiesController'
 import BlogController from './BlogController'
 import HomeController from './HomeController'
 import InboxController from './InboxController'
+import VerifyController from './VerifyController'
 import TestimonialsController from './TestimonialsController'
 import AgentController from './AgentController'
 import LocationController from './LocationController'
@@ -25,6 +26,7 @@ PropertiesController: Object.assign(PropertiesController, PropertiesController),
 BlogController: Object.assign(BlogController, BlogController),
 HomeController: Object.assign(HomeController, HomeController),
 InboxController: Object.assign(InboxController, InboxController),
+VerifyController: Object.assign(VerifyController, VerifyController),
 TestimonialsController: Object.assign(TestimonialsController, TestimonialsController),
 AgentController: Object.assign(AgentController, AgentController),
 LocationController: Object.assign(LocationController, LocationController),

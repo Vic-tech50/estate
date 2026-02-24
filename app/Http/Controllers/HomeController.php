@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\Property;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 
@@ -27,8 +28,10 @@ class HomeController extends Controller
             ->latest()
             ->get();
         $propertycount = Property::where('status', 'available')->count();
+        $agentcount = User::where('role', 0)->count();
+        $pendingpropertycount = Property::where('status', '!=',  'available')->count();
         // $properties = Property::where('status', 'available')->get();
-        return Inertia::render('dashboard', compact('propertycount', 'properties', 'blogs'));
+        return Inertia::render('dashboard', compact('propertycount', 'properties', 'blogs', 'agentcount', 'pendingpropertycount'));
     }
 
     public function agent()

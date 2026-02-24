@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
 import AppLayout from '@/layouts/app-layout';
 import { dashboard } from '@/routes';
@@ -8,44 +9,6 @@ const breadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Dashboard',
         href: dashboard().url,
-    },
-];
-
-type Property = {
-    id: number;
-    name: string;
-    location: string;
-    units: number;
-    occupied: number;
-    manager: string;
-    status: 'Active' | 'Maintenance' | 'Vacant';
-};
-
-type Activity = {
-    id: number;
-    who: string;
-    action: string;
-    time: string;
-};
-
-const sampleActivities: Activity[] = [
-    {
-        id: 1,
-        who: 'Tenant: Chidi',
-        action: 'Submitted rent payment for March',
-        time: '2h ago',
-    },
-    {
-        id: 2,
-        who: 'Manager: Ada',
-        action: 'Created maintenance ticket #342',
-        time: '6h ago',
-    },
-    {
-        id: 3,
-        who: 'Tenant: Amina',
-        action: 'Requested apartment inspection',
-        time: '1d ago',
     },
 ];
 
@@ -82,6 +45,8 @@ function StatCard({
 
 export default function Dashboard() {
     let propertycount: any = usePage().props.propertycount || [];
+    let pendingpropertycount: any = usePage().props.pendingpropertycount || [];
+    let agentcount: any = usePage().props.agentcount || [];
     let properties: any = usePage().props.properties || [];
     let blogs: any = usePage().props.blogs || [];
     // const occupancy = useMemo(() => {
@@ -112,12 +77,17 @@ export default function Dashboard() {
                         </p>
                     </div>
                     <div className="flex items-center gap-2">
-                        <button className="rounded-md border px-3 py-2 text-sm hover:bg-muted">
+                        {/* <button className="rounded-md border px-3 py-2 text-sm hover:bg-muted">
                             Export
-                        </button>
-                        <button className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:opacity-95">
-                            New Property
-                        </button>
+                        </button> */}
+                        <Link
+                            href="/properties/create"
+                            className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:opacity-95"
+                        >
+                            <Button className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:opacity-95">
+                                New Property
+                            </Button>
+                        </Link>
                     </div>
                 </div>
 
@@ -125,7 +95,7 @@ export default function Dashboard() {
                 <div className="grid gap-4 md:grid-cols-3">
                     <StatCard
                         title="Total Properties"
-                        value={propertycount}
+                        value={propertycount || 0}
                         delta=""
                         icon={
                             <svg
@@ -144,9 +114,9 @@ export default function Dashboard() {
                         }
                     />
                     <StatCard
-                        title="Occupancy Rate"
-                        value={`100%`}
-                        delta="+3%"
+                        title="Pending Property"
+                        value={pendingpropertycount || '0'}
+                        delta=""
                         icon={
                             <svg
                                 className="h-5 w-5"
@@ -171,9 +141,9 @@ export default function Dashboard() {
                         }
                     />
                     <StatCard
-                        title="Monthly Revenue"
-                        value="₦3,420,000"
-                        delta="+8%"
+                        title="Total Agent"
+                        value={agentcount || 0}
+                        delta=""
                         icon={
                             <svg
                                 className="h-5 w-5"

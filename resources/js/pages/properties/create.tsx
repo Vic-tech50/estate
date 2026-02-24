@@ -86,69 +86,11 @@ export default function AddProperty() {
         });
     }, []);
 
-    // Handle simulated upload
-    //   const onUpload = React.useCallback(
-    //     async (
-    //       files: File[],
-    //       {
-    //         onProgress,
-    //         onSuccess,
-    //         onError,
-    //       }: {
-    //         onProgress: (file: File, progress: number) => void;
-    //         onSuccess: (file: File) => void;
-    //         onError: (file: File, error: Error) => void;
-    //       },
-    //     ) => {
-    //       try {
-    //         const uploadPromises = files.map(async (file) => {
-    //           try {
-    //             const totalChunks = 10;
-    //             let uploadedChunks = 0;
-
-    //             for (let i = 0; i < totalChunks; i++) {
-    //               await new Promise((resolve) =>
-    //                 setTimeout(resolve, Math.random() * 200 + 100),
-    //               );
-
-    //               uploadedChunks++;
-    //               const progress = (uploadedChunks / totalChunks) * 100;
-    //               onProgress(file, progress);
-    //             }
-
-    //             await new Promise((resolve) => setTimeout(resolve, 500));
-    //             onSuccess(file);
-    //           } catch (error) {
-    //             onError(
-    //               file,
-    //               error instanceof Error ? error : new Error("Upload failed"),
-    //             );
-    //           }
-    //         });
-
-    //         await Promise.all(uploadPromises);
-    //       } catch (error) {
-    //         console.error("Unexpected error during upload:", error);
-    //       }
-    //     },
-    //     [],
-    //   );
-
     const onFileReject3 = React.useCallback((file: File, message: string) => {
         toast(message, {
             description: `"${file.name.length > 20 ? `${file.name.slice(0, 20)}...` : file.name}" has been rejected`,
         });
     }, []);
-
-    // Submit to server via Inertia
-    //   const handleSubmit = (e: React.FormEvent) => {
-    //     e.preventDefault();
-    //     form.post("/upload", {
-    //       onSuccess: () => {
-    //         toast("Files uploaded successfully!");
-    //       },
-    //     });
-    //   };
 
     function submit(e: any) {
         e.preventDefault();
